@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-  <modules source="Rubio's theWord Repo" baseurl="http://www.theword.net/">
-  <module identifier="nb12" type="Bibles" abbr="AMP" title="Amplified Bible" author="The Lockman Foundation" lang="eng" url="bin/get.php/amp.ontx.exe" descrurl="app/downloadmodules/module.list.php?info=1&amp;id=30069" vermajor="1" verminor="0" verdate="2010-05-04" produrl="index.php?purchase-item&amp;pid=20" price="24.95" cur="$" dlsizekb="8782"/>
-</modules>
+<modules source="Rubio's theWord Repo" baseurl="https://github.com/rubiot/theword-repo/raw/main/">
+	<module identifier="jfa1681" type="Bibles" abbr="JFA1681" title="Tradução de João Ferreira de Almeida - 1681" author="João Ferreira de Almeida" lang="por" url="bibles/jfa1681.nt" descrurl="bibles/jfa1681.html" vermajor="1" verminor="0" verdate="2019-09-12" dlsizekb="706"/>
+    </modules>
+
