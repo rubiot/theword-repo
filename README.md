@@ -1,2 +1,2 @@
 # theword-modules
-TheWord custom modules repository
+Unofficial theWord modules repository
