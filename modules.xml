@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <modules source="Rubio's theWord Repo" baseurl="http://www.theword.net/">
+  <module identifier="nb12" type="Bibles" abbr="AMP" title="Amplified Bible" author="The Lockman Foundation" lang="eng" url="bin/get.php/amp.ontx.exe" descrurl="app/downloadmodules/module.list.php?info=1&amp;id=30069" vermajor="1" verminor="0" verdate="2010-05-04" produrl="index.php?purchase-item&amp;pid=20" price="24.95" cur="$" dlsizekb="8782"/>
+</modules>
