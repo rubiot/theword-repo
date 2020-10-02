@@ -6,6 +6,6 @@
 	<module identifier="GrkAnLex" type="Dictionaries" abbr="0-GrkAnLex" title="Greek Analytical Lexicon" author="Panagiotis Peponakis" lang="eng" url="dictionaries/GrkAnLex.dct.twm.twzip" descrurl="dictionaries/GrkAnLex.html" vermajor="0" verminor="5" verdate="2020-09-08" dlsizekb="40971"/>	
 	<module identifier="GrkAnLexPro" type="Dictionaries" abbr="0-GrkAnLexPro" title="Greek Analytical Lexicon Professional" author="Panagiotis Peponakis" lang="eng" url="dictionaries/GrkAnLexPro.dct.twm.twzip" descrurl="dictionaries/GrkAnLexPro.html" vermajor="0" verminor="6" verdate="2020-09-08" dlsizekb="32479"/>	
 	<module identifier="GrkAnLexMorph" type="Dictionaries" abbr="0-GrkAnLexMorph" title="Greek Analytical Lexicon Morph Search" author="Panagiotis Peponakis" lang="eng" url="dictionaries/GrkAnLexProMorph.dct.twm.twzip" descrurl="dictionaries/GrkAnLexProMorph.html" vermajor="0" verminor="6" verdate="2020-10-04" dlsizekb="34358"/>	
-	<module identifier="HALNor" type="Dictionaries" abbr="0-OpHebAnLexNorm" title="Open Hebrew Analytical Lexicon Noraml Edition" author="Eliran Wong" lang="eng" url="dictionaries/OpenHebAnLex.twzip" descrurl="dictionaries/OpenHebAnLex.html" vermajor="1" verminor="0" verdate="2019-03-12" dlsizekb="11736"/>		
+	<module identifier="HALNor" type="Dictionaries" abbr="0-OpHebAnLexNorm" title="Open Hebrew Analytical Lexicon Normal Edition" author="Eliran Wong" lang="eng" url="dictionaries/OpenHebAnLex.twzip" descrurl="dictionaries/OpenHebAnLex.htm" vermajor="1" verminor="0" verdate="2019-03-12" dlsizekb="11717"/>		
 </modules>
 
