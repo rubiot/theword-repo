@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <modules source="Rubio's theWord Repo" baseurl="https://github.com/rubiot/theword-repo/raw/main/">
 	<module identifier="jfa1681" type="Bibles" abbr="JFA1681" title="Tradução de João Ferreira de Almeida - 1681" author="João Ferreira de Almeida" lang="por" url="bibles/jfa1681.nt" descrurl="bibles/jfa1681.html" vermajor="1" verminor="0" verdate="2019-09-12" dlsizekb="706"/>
-	<module identifier="uBDB" type="Dictionaries" abbr="u-BDB" title="The Brown-Driver-Briggs Hebrew and English Lexicon (Original Title: A Hebrew and English lexicon of the Old Testament)" author="Brown, Francis, 1849-1916; Robinson, Edward, 1794-1863; Driver, S. R. (Samuel Rolles), 1846-1914; Briggs, Charles A. (Charles Augustus), 1841-1913; Gesenius, Wilhelm, 1786-1842. Hebräisch-deutsches Handwörterbuch" lang="eng" url="dictionaries/uBDB.dct.twm.twzip" descrurl="dictionaries/uBDB.html" vermajor="1" verminor="0" verdate="2018-12-?" dlsizekb="36687"/>
+	<module identifier="uBDB" type="Dictionaries" abbr="u-BDB" title="The Brown-Driver-Briggs Hebrew and English Lexicon (Original Title: A Hebrew and English lexicon of the Old Testament)" author="Brown, Francis, 1849-1916; Robinson, Edward, 1794-1863; Driver, S. R. (Samuel Rolles), 1846-1914; Briggs, Charles A. (Charles Augustus), 1841-1913; Gesenius, Wilhelm, 1786-1842. Hebräisch-deutsches Handwörterbuch" lang="eng" url="dictionaries/uBDB.dct.twm.twzip" descrurl="dictionaries/uBDB.html" vermajor="1" verminor="0" verdate="2018-12-01" dlsizekb="36687"/>
     </modules>
 
