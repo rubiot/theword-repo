@@ -13,5 +13,6 @@
 	<module identifier="phrbyphr_1John" type="Commentaries" abbr="PhrbyPhr - 1John" title="Phrase by Phrase - 1 John" author="Jonathan Koehn" lang="eng" url="commentaries/PhrbyPhr-1John.twzip" descrurl="commentaries/PhrbyPhr-1John.html" vermajor="1" verminor="0" verdate="2020-10-02" cur="$" dlsizekb="208"/>
 	<module identifier="crckt-hmny-por" type="Books" abbr="HarmSmRsCr" title="Harmonia de Samuel, Reis e Crônicas" author="Crockett, William Day" lang="por" url="books/CrocketHarmony-Samuel-Kings-Chronicles.por.twzip" descrurl="books/CrocketHarmony-Samuel-Kings-Chronicles.por.html" vermajor="1" verminor="0" verdate="2013-06-04" dlsizekb="84"/>
 	<module identifier="GrkAnalyses2" type="Dictionaries" abbr="GrkAnalyses2" title="Perseus Greek Analyses Dictionary" author="Perseus Project" lang="grc" url="dictionaries/Perseus Greek Analyses.twzip" descrurl="dictionaries/Perseus Greek Analyses.html" vermajor="1" verminor="0" verdate="2018-11-07" dlsizekb="51082"/>
+	<module identifier="LSJ+" type="Dictionaries" abbr="LSJ+" title="An Greek-English Lexicon (Liddell/Scott/Jones)" author="Liddell, Henry George; Scott, Robert" lang="grc" url="dictionaries/Liddell.twzip" descrurl="dictionaries/Liddell.html" vermajor="1" verminor="0" verdate="2018-10-23" dlsizekb="50616"/>
 </modules>
 
