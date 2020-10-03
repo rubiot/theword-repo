@@ -14,5 +14,7 @@
 	<module identifier="crckt-hmny-por" type="Books" abbr="HarmSmRsCr" title="Harmonia de Samuel, Reis e Crônicas" author="Crockett, William Day" lang="por" url="books/CrocketHarmony-Samuel-Kings-Chronicles.por.twzip" descrurl="books/CrocketHarmony-Samuel-Kings-Chronicles.por.html" vermajor="1" verminor="0" verdate="2013-06-04" dlsizekb="84"/>
 	<module identifier="GrkAnalyses2" type="Dictionaries" abbr="GrkAnalyses2" title="Perseus Greek Analyses Dictionary" author="Perseus Project" lang="eng" url="dictionaries/Perseus Greek Analyses.twzip" descrurl="dictionaries/Perseus Greek Analyses.html" vermajor="1" verminor="0" verdate="2018-11-07" dlsizekb="51082"/>
 	<module identifier="LSJ+" type="Dictionaries" abbr="LSJ+" title="An Greek-English Lexicon (Liddell/Scott/Jones)" author="Liddell, Henry George; Scott, Robert" lang="eng" url="dictionaries/Liddell.twzip" descrurl="dictionaries/Liddell.html" vermajor="1" verminor="0" verdate="2018-10-23" dlsizekb="50616"/>
+	<module identifier="RMAC-por" type="Dictionaries" abbr="RMAC-por" title="Códigos de Análise Morfológica de Robinson" author="Robinson, Maurice" lang="por" url="dictionaries/RMAC.por.twzip" descrurl="dictionaries/RMAC.por.html" vermajor="1" verminor="3" verdate="2020-07-14" dlsizekb="46"/>
+	<module identifier="d5es" type="Dictionaries" abbr="RMAC-spa" title="Códigos de Análisis Morfológico de Robinson" author="Robinson, Maurice" lang="spa" url="dictionaries/RMAC.spa.twzip" descrurl="dictionaries/RMAC.spa.html" vermajor="1" verminor="3" verdate="2020-07-14" dlsizekb="46"/>
 </modules>
 
