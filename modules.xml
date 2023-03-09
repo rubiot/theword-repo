@@ -17,7 +17,6 @@
 	<module identifier="KJV2016" type="Bibles" abbr="KJV2016" title="King James Version 2016 Edition" author="Nick Sayers" lang="eng" url="bibles/kjv2016.nt" descrurl="bibles/kjv2016.html" vermajor="1" verminor="2" verdate="2020-06-15" dlsizekb="993"/>
 	<module identifier="FrporFr1P" type="Commentaries" abbr="FrporFr-1P" title="Frase por Frase - 1 Pedro" author="Jonathan Koehn" lang="spa" url="commentaries/FrporFr-1Pedro.cmt.twm" descrurl="commentaries/FrporFr-1Pedro.html" vermajor="0" verminor="7" verdate="2020-10-07" produrl="thewordbooks-redirect.html" price="0.00" cur="$" dlsizekb="519"/>
 	<module identifier="gesLex" type="Dictionaries" abbr="Gesenius' Lexicon" title="Gesenius' Lexicon" author="Friedrich Wilhelm Gesenius" lang="eng" url="dictionaries/Gesenius' Lexicon.dct.twm.twzip" descrurl="dictionaries/Gesenius.html" vermajor="1" verminor="0" verdate="2020-08-20" cur="$" dlsizekb="6076"/>
-	<module identifier="gesLex" type="Dictionaries" abbr="TestTaaa Gesenius' Lexicon" title="TestT Gesenius' Lexicon" author="Friedrich Wilhelm Gesenius" lang="eng" url="dictionaries/Gesenius' Lexicon.dct.twm.twzip" descrurl="https://www.doctordavet.com/welcome.html" vermajor="1" verminor="0" verdate="2020-08-20" cur="$" dlsizekb="6076"/>
-	
+
 
 </modules>
