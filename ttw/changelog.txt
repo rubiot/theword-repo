@@ -1,0 +1,1494 @@
+0.10--
+	-Fixed bug of .TWM in the file name
+	-Fixed bug of loading config-table.ini when there is not a #config section in file
+	-Added id=? will result in the name RTFtotheWORD-Date-hour-minute or second not sure which
+
+0.11--
+	-Fixed bug on topic indicator not updating
+
+0.20--
+	-Many updates - especially new interface design
+	-Save and Load of config file
+	-Load of About file
+	-Many RTF things are still the same
+	-Testing Enabling/Disabling buttons in a certain order
+	-Fixed Export file names, works better now
+0.21--
+	-Added Format All option to remove "enter"s. 
+	-New interface for config section
+	-Fixed a few bugs like in exporting - I had messed up the config table
+	-Alt + d and Alt + u now move down or up to the next entire topic indicator
+0.22--
+	-Bidi Ltr turned on (no longer unspecified)
+0.23--
+	-Fixed bug: ONly partial lines were being made topics now it is all of the line the indicator is on is a topic not just part
+0.24--
+	-Added Topic Indicator alert if a topic is found on inserting based on Headers
+	-Added a couple more checkboxes to Config.	
+
+0.25--
+	-Fixed bug: First topic indicator now works
+
+0.26--
+	-Added Export to Hybrid -- requires RELREF_#_#_#_#_#_# or RELREF_#_#_# in the topic (in content does not work yet)
+
+0.27--
+	-Updated Export hybrid with <Gen 1:1> or <Gen 1:1-10> or <Gen 1:1-2:5> (Thanks Costas!)
+0.28--
+	-Shows your reference list in RTF (For checking)
+	-Fixed bug in Config, wasn't saving it all.
+	-Also fixed a bug in config table wasn't getting everything in there. (Thanks Jon!)
+	-Updated References now can add your own, change them etc. in references_names.ref 1-Gen 1-Genesis etc. Remember the references will disappear. So if you want a reference to stay do this <Gen 1:1> Gen 1:1 kinda like a double. The <> are special to indicate it is a RELREF for a bookmark.
+	-Note, references that are unicode won't work yet. They will show up as bad book. Also note a reference that is not matched will have !!!Bad-Book-Name!!! show up in topic content. 
+0.29--
+	-Now supports unicode but must wrap reference with something like <ref>Gén 1:1</ref>
+	you can change this to other things if you prefer like <r>Gén 1:1</r> but the indicators must be changed in
+	the interface and unfortunately they are not saved.
+	-references_names.ref must be UTF-8-BOM
+0.30--
+	-c option for exact reference name including case match
+	-b Now config has save and save as
+	-a Bug fixed with update on RELREF bookmarks not showing up.
+0.31--
+	-link topics <link>Topic</link> for anchor/topics (bookmarks are auto generated as bkm1, bkm2, etc per topic) Note: <link>topic</link> if you want the bookmark semi invisible in the text like maybe at the start of a topic.
+	<link>topic</link>topic if you want to see the topic in the text later.
+	-Check for chapter and verse to make sure not bad if it is do something like !!!Bad-Chapter!!! or !!!Bad-Verse!!! (Note if it says Bad-Chapter it may also be a bad verse. RTFtotheWORD can't tell because there are no verses for a bad chapter.)
+	-Moved Hybrid requirement to 4
+0.32--
+	-bug fix was missing publisher in config
+	-<tlink>topic</tlink> for a topic link with no bookmark (nice for lexicons to have Strongs and Lemmas)
+0.33--
+	-Pre-Export Check - shows topics, and Bad References (Now Bad references in export silently disappear so make sure to check.) Options for <link>, <tlink> and Good-<ref> also available) This is also useful for seeing the order <tlink>, <link> is made.
+	-bug <link>...</link> <tlink>...</tlink> in subject tree needed removed
+	-bug I was not setting rel_order correctly so <link> and <tlink> had bad order
+0.34--
+	-Support for Exod 2:5–6 \u2013 endash added
+	-Shows in loading RTF and loading About if file is in use.
+	-Now warns user about overwriting a module on export.
+0.35--
+	-Test area for hyperlinks
+0.36--
+	<str>words</str> <slf>words</slf> , <mrph>words</mrph> if there is a || like <str>words||keepwords</str> keep after the || instead of the first portion. tw://[self]?t=xxxx tw://[strong]?G1 tw://[morph]?xx
+0.37--
+	-<bcv>ref</bcv> OR <bcv>ref||keepwords</bcv> ref can be Gen 1, Gen 1:1, Gen 1:1-10, Gen 1:1-2:1
+	-<ref>xxx</ref> has been updated to include Gen 1
+	-topic_pos now include bkm: in bkm:RELREF...
+	-<str>, <mrph>, <slf>, <bcv> now work in topics and leave behind keep words
+0.38--
+	-bug found in building <str>, <mrph> when the content was different styles red, black etc.
+
+0.39--
+	-Commentary Export added, precheck for commentary export added (needs testing
+	-reference_names.ref update (thanks Jon)
+0.40--
+	-Precheck should tell you if <c> or <:> are not found
+	-Precheck should let you know if <c> or <:> won't be displayed for that type (silently they dissapear in the export)
+	-<tlink>, <link> and <:> removed in commentary export
+	-<c>...</c> removed in dic, gen, map export
+	-Please note there are some differences between pre-check and export since they are done in two separate functions but hopefully what pre-check says is the export.
+0.41--
+	-various bugs
+	-Fonts, bold, italic, etc should not matter in tags <ref>, <c>, <:>, <bcv>, <str>, <link>, <tlink>, <mrph>, <slf> since rvseoMultiItem has been added to all searches for these.
+0.42--
+	-Include Topic/References (now includes the reference for the commentary.)
+	-Config now includes the possibility of theWord6
+0.43--
+	-Format all has two new additions they are wip
+0.44--
+	-bug fix for random MS Word export (still may exist in some portions).
+	-We should also have new RVF 18.3 but not sure since hyperlink problem still exists, I think.
+0.45--
+	-Footnotes and endnote area introduced. One can now edit those but doesn't do much more yet. (How do we handle?)
+0.46--
+	-<c> misalignment bug squashed thanks for helping with this one Jon
+0.46.1--
+	-Hyperlink window now works RVF 18.3 does correctly bring in unicode now (sorta) there is something going on can't quite finger it. 
+0.46.2--
+	-Pre-check indicates what <:> are used in export and export tries to adjust for multi-levels from the beginning.
+	-Pre-check also indicates if the levels appear odd.
+0.46.3--
+	-There shouldn't be any left over <:> in topics anymore
+0.46.4--
+	-Now we can tell how long it is taking to load a document in statbar
+	-Bug loading a bigger file, should be fixed (lets hope we didn't break anything else)
+0.46.5--
+	-Pre-check bug fix for unicode
+	-Also bug fix for indicators 
+	-Footnotes/end notes begin to work (new file in templates footnote.rtf) you can change this as you like for the footnote section. (Still need to work on the footnote bookmarks
+0.46.6--
+	-out of index bug fixed
+	-moving ahead on footnotes (footnotes in tables don't work yet)
+0.46.7--
+	-Fixed some footnote bugs (thanks JG)
+0.46.8
+	-Fonts on screen mostly updated to Segeo UI and 10 point. Thanks JG
+	-An update to interface in export. I removed an area.
+	-Update to footnotes, now tables work. Footnotes only have a line before them. I had to go a different method.
+	-The footnotes should be faster and work better thanks to Sergey at TRichView Support
+0.46.9
+	-BidiMode = bdLeftToRight
+0.47.0--
+	-rvtfSavePngAsPng = True
+	-rvtfSavePicturesBinary = True
+	-rvtfPNGInsteadOfBitmap = True
+0.47.1--
+	-Various fixes in regard to having a file name shown at the top.
+	-If one cancels out of loading rtf it should keep the last file loaded if there was one.
+	-Interface buttons updated in Right Click menu, and above the RichViewEdit
+0.47.2--
+	-Graphics improved - thanks JG - specifically shadows
+0.47.3--
+	-Find & Replace dialog added
+0.47.4--
+	-minor change to graphic area. May help with size of module
+	-RVF load and save is now possible
+	-Added some short cuts for putting in like <str> etc around a selection
+	-Re-arranged the popup-menu
+0.47.5--
+	-The main Format for saving to theWord is now RVF (normally smaller file size) but RTF is kept for manual editing/testing purposes.
+	2. RVF/RTF is normally set to RVF but when not depressed it is RTF
+0.47.6--
+	-PNG now works correctly thanks to Sergey
+0.47.7
+	-fixed broken rtf export. (I had forgot to tell the content it was in rtf.)
+0.47.8--
+	-New icon
+0.50.0--
+	-Component update
+	-Background change
+0.50.1--
+	-Fix Hebrew problem - UseCharsetForUnicode := True;
+0.50.2--
+	-Edit References
+	-Show single chapter books in pre-export check for <ref>, <c>, <bcv>
+0.50.3--
+	-Format All has some new stuff in testing (thanks Costas!)
+0.50.4--
+	-Bug fix on bookmarks
+0.50.5 -- 0.1.0
+	-Switched RTFtotheWORD now it is TotheWord 0.1.0
+	-Major interface change
+	-Regex searcher and editor now built in.
+	-Configuration Tab should be ready to go
+	-The Main Menu bard should be ready to go Config/About File, File, Edit, Font, Paragraph etc. However, language changes will not work fully.
+	-Editor / Content is still being worked on
+		-Edit should work however the TopMemo column is not implemented yet and should jump one to a topic heading or indicator when done. 
+		-Find, Normal and Regex should work however note "Use Format Options" is still in the works and only works with Normal as of now. Regex integration is planned.
+		-Replace, still being worked on. Not sure where it is at. It appears it onl works in conjunction with Normal find for right now and formatting.
+		-Convert tab should be good to go. Eventually <:> may be replaced with Headings or whatever it may be called. Thoughts?
+		-Quick Format - Greek and Hebrew have a bad loop bug that needs sorted teh rest should work.
+	-Pre-Export Check should be ready to go.
+		-Now only shows good if selected and they can be offset.
+		-Regex search has not be implemented. 
+	-Export TotheWord is now how things are saved/exported. Note options available depends one what you set in Configuration.
+0.1.1--
+	-Updated interface to be a bit more like RTFtotheWord
+	-Quick Format
+		-Added Strongs, Morphology Detection and linking (Note you can see the regex in the button that is used.)
+		-Fixed Greek and Hebrew Detection and Formatting. (Note you can see the regex in the button that is used.)
+			-Please let me know if the progress bar works for these. It should ...
+	-bug reported by JG on an image. not sure what is going on it worked in RTFtotheWORD, so it could be a TRichView setting or a difference in Lazarus.
+	-Let me know of other Regex processes that could be automated like the above. Eventually one should be able to perform customized regex. 
+0.1.2--
+	-Load <:> and <c> added so you can quickly jump to that in a file.
+	-Progress bar fixed
+	-Ruler fixed
+	-Quick Format Strongs updated
+	-Some progress on BCV in quick format but much to go.
+	-Topics from Heading Styles - seems to be a bit buggy
+	-File no longer loaded on start.
+	-Bug of background color changing on File load fixed.
+	-Still have image bug
+	-Find still buggy sorta on Normal
+	-Replace and Replace All should work with Formatting now. Also note you can now do hyperlinks in replaces.
+	-Regex in Find was made invisible since it needs much work. I am working on getting normal correct first.
+	-Some tabs re-arranged (thoughts?)
+0.1.3--	
+	-Interface update and streamlining. Thanks for the ideas JG
+0.1.4--
+	-Interface added About File tab and adjusted fonts
+0.1.5--
+       -Rúbio is helping figure out startup crash.
+0.1.6--
+	-Still buggy now fixed.
+	-Alt+ Additions
+0.1.7--
+	-Fixed About file load - needed to be RTF when in theWord - thanks JG
+	-Updated a few interface items position
+	-Now you can choose what font you want for all fonts.
+0.1.8--
+	-Alt+R now does <ref>Gen 1:1</ref>Gen 1:1
+	-Find/Replace with regex and formats should now work. Play with it though on smaller files first it still has some work to go such as no escape once started.
+0.1.9--
+	-L button error fixed.
+	-Config truncation fixed was due to word wrap
+0.2.0--
+	-Find button fixed for regex now it should just go to the next (normal find has more to go for formatting options)
+	-Regex only goes down never up in searches	
+	-Find/Replace All was not working at the start of the file and reported regex such as \w+ not working due to an error of not being able to start at 0. Now fixed
+	-Loading .rvf for about should work. 
+	-Regex single replace needs fixed. 
+0.2.1--
+	--many updates to Find, Replace, Replace All - note normal find, replace, replace all does not work with format yet completely. and some code cleaning
+	--Note that in the format area for Find and Replace that a Right Click turns off a format where as a Left click States that specific format is in one state or another.
+0.2.2--
+	-Added Text Background, Tables 100% Width,  in Quick Format
+	--Added Set Line Spaceing to 1, Clear Paragraph in Quick Format but disabled because they don't work right.
+	-Find/Replace combined to single tab which enlarges/shrinks. 
+	-Note for now since we don't have a help file the Hint on hovers are important.
+0.2.3--
+	-Config Template, Save, Save AS FIXED thanks JG
+	-Added Find/Replace Pairs now in Regex Panel in Find/Replace -- also its File New, Open, Save is in File
+	-Use the right click menu in the Find/Replace Pairs -- note "Replace All Pairs All" uses every pair in the Pair list and does a replace all going through each. Recommend you know exactly what you want for your font settings if you use them before you start.
+	-This is good for reusable Regex, Running a Group of Regex that have same font settings, etc.
+	-Fixes to Normal Find, Replace, Replace All - please check
+0.2.4--
+	-Replace Only in Selected Text added
+	-Switched Hyperlink Check to the Hyperlink Button in Replace/Replace All
+	-Added Hyperlink Button to Find
+	-Hid some icons for now in Find/Replace
+	-Added PilCrow - Non-printing Character to Right Click popup
+0.2.5--
+	-Various bugs fixed
+	-Note a Out of Memory bug appears in regards to Replace All Pairs All - trying to locate.
+	-Note Replace All Pairs All does not work with Normal Replace or Replace All I need to fix this.
+	-A few interface changes in Find/Replace
+0.2.6--
+	-Sped up the search/replace engine
+	-Still out of memory bug on big filehmms.
+	-Worked a bit on Fontcolor - still not working for Find.
+0.2.7--
+	-Added Font Color and Font Background Color
+	-Right Click Use Format Options to turn all off which looks like boxes.
+	-Fixes on replace engine. $2 was having problems If you have opportunity test multiple $1$2$3$4 etc.
+0.2.8--
+	-TotheWord has a memory leak in Replace/Replace All I need to track down hmms
+	-I added a Repeat x for the Replace to repeat so many times.
+	-Reworking the Regex code to speed it up. Thanks for the tip Rubio.
+0.2.9--
+	-Memory leak should be solved - let me know if you get stuck in a loop in Find, Replace, Replacee (with repeats), Replace All, Replace All Pairs All
+0.3.0--
+	-Regex refix, $1$2$3; should work. Please continue to test and let me know.
+	-Replace repeat works on normal now.
+	-Replace All Pairs All should work with normal now.
+0.3.1--
+	-References can now have <ref>Heb 1:2a-3b</ref>
+0.3.2--
+	-<link>,<tlink> and <ref> had a bug where the checkpoints replaced each other now we are using RichViewEdit.InsertCheckpoint which  "inserts checkpoint exactly in the position of caret."
+0.3.3-
+	-End of line bookmark now stays on the present line. However not if you do a<ref> then it will be before "a". so space<ref> is recommended.
+0.3.4-
+	-Find needed a GlobalBoolean reset, also updated counter code for Regex Replace.
+0.3.5-
+	-Replace, Replace All, All Pairs All Replace should be much faster. Thanks Rubio, I got to thinking and sped up the regex by basically doing the original regex twice instead of building my own much faster. I still want to see. I may be able to speed it up more.
+0.3.6-
+	-Added zero width space after </ref>, </link>, </tlink> to prevent it from jumping to a following hyperlink possibly and should fix a bookmark from jumping to next line, and it gives it something to hang on if it is back to back bookmarks.
+	-Changed RichViewAbout rvrtfSavePicturesBinary to false. Can't be binary picture in About.
+	-Bug in Regex Replace it jumped to beginning it should only have been Replace All - fixed
+	-Format Painter button now added thanks Costas!	
+	-Warns on overwriting of files when saving.
+	-Added in Help - Book Module Specification which loads from help the tw3-book-module-spec.rtf file. If you need to update it change the rtf file but not the name.
+0.3.7-
+	-Added Regex Help in Help
+	-Added hints to QuickFormat Strongs, Morphology
+	-RTF is now the default thanks Sergey
+	-Clear All Text background updated
+	-Clear All Paragraph Background fixed
+	-Set Line Spacing to 1 fixed
+	-Updated BCV quick format but you may want to use Find/Replace instead this only does \w+ \d+:\d+
+	-Format painter icon added, thanks Costas
+0.3.8-
+	-Pairs now includes Find/Replace Format -- old pairs should still load but best to update them.
+	-a fix a few bugs related to above
+0.3.9-
+	-Added regex options, help, working on.
+	-^ and $ works in Multiline - should also work with formatting
+	-\n and \r works in Singline - still testing with format seems to work differently than it should not sure why.
+	-Note CR, LF, CRLF is the setting for the PCRE engine - once we get a good setting these will be hidden probably.
+	-Note None, #13CR, #13CR#10LF is for TRichViewEdit settig - once we get a good setting these will be hidden probably.
+0.4.0-
+       -Important note SingleLine is DotAll as indicated in the Hint so image . now is extremely greedy it can cover LF/#10, CR#13 so less greedy regexes can be helpful like .*? etc. 	
+	-Added regopts to pairs = sorry please readd pairs the original pairs may cause an error sorry.
+	-Check out the Help on Regex Options for PCRE 6.7 --- advanced help avaible in side the Help Folder in the sub folder "PCRE-6.7 Help"
+0.4.2-
+	Two search logics: Search then Format Check (Find, Replace, Replace All) OR Format Check then Search (Find done, Replace and Replace all are not done yet).
+	-A new search logic is being worked on which is "Test format than Search" (To use uncheck Search then chk fmt) - note it only works in Find at this point. Replace and Replace All to come. 
+	-The previous search logic "Search than Test Format" make sure "Search then chk fmt" is checked. (Note an improvement in this area has happened as well if you do .+ with bold. It should select only the first occurence of bold.
+0.4.3-
+	-Worked on fixing Find jumping to next search area when clicked
+	-LM is Paragraph markers it disappeared off the popup not sure why I think the file didn't update on my other pc right or something. However, we may need to do somethinglike this in the long run because with that I am actually updating some of the TRichView files which I could forget in the future. So I need to learn how to add it to the popup a different way if I can.
+	-Test Format is something that works with "Format then Search" Logic however it is a work in progress. I am not sure I will be able to solve this riddle of the combination of Format and Regex mixed it seems they are soo separate perhaps another day. It sure would be nice.
+0.4.3b-
+	-Replace and Replace All added.
+	-Note normal search does not work with this search logic except on Find maybe.
+	-Search selection may or may not work I have not tested it	
+	-Note I am finding like a space may only get its formatting adjusted on the first replace instance. (I am not sure if it is a single character issue or not this will be interesting to chase down this bug.) 
+	-Some like .+$ is not correct but many things may be helpful with this methodology. Not perfect but closer to LibreOffice. I will continue to bring other things up to speed. We will see I may remove the previous logic it is still available for now.
+0.4.4-	
+	-Load <:> bug fixed no longer resizes.
+	-Bugs worked on in new format/search for Find, Replace, Replace All. (I recommend testing on a Find before using Replace or Replace All) (Still some more and they are hard to trace down. Hmms I'll have to come back to this another time.)
+	-Seems to work best on at least one format option chosen if not, Replace All seems to be having trouble.
+	-Note Normal Search doesn't work much with new logic as of yet.
+0.4.5-
+	-BCV now works with space at front or end of reference text and letter next to reference
+0.4.6-
+	-Improvements in Format then Regex logic -- Find should work better, Replace (is odd if the format and regex falls on the first character in a match. Needs more testing), Replace All seems to work better.
+	-An excellent way to test is to save then include a highlight in Replace format then you know what was changed then you can revert to save and do the same without the highlight. 
+	-Format then Regex should work without find formatting enabled. 
+	-I removed the Depressed look from Font Color and Text Background Color in Replace because if it is on it is being replaced unlike bold which may be "You want a word Bolded" or you want "Bold removed" or you want it unaffected.
+0.4.7-
+	-Added, Narrow-width, Space, Nothing for Link/Reference in Build
+	-Added a TreeView that shows the items of TRichView in a browsable way very informative for indepth data. (May be an advanced item in the future like developer mode or something.) It will help me track down bugs I think.
+	Thanks Sergey! and another guy Jonjon on the forum. There are some things here and there. Note if you hold down Ctrl while mousing over the TreeView after update it will scroll the RichView to that area. The bug is that it should highlight the correct node when you select an item in RichView but it doesn't hmms
+0.4.8-
+	-A bit of internal cleaning
+	-There is a bug with paragraph style being used instead of font style when InsertText is made at the start of a Paragraph.
+0.4.9
+	-Pixels is now the default unit to line up with theWord which has pixels. Also a note has been added to Units for theWord
+	-Added a button to show Export if needed.
+	-b switched to rvstimIgnoreSourceStyleTemplates for RichViewEdit and RichViewClean
+	-c added the three options for Styles Ignore, Target, Source
+	-d added 0p/6p Paragraph Spacing, and updated Clear All Text Background, Clear All Paragraph Background
+0.5.0-	
+	-Someplace in 0.4.8 I made it so footnotes now popup if you click right after them whether the footnote area is open or not.
+	-Special RVF interlinear format now supported.Technically a RVF inside an RVF
+	-b updated Find/Replace mechanics for Reg then Fmt
+	-c updated Find/Replace mechanics for Fmt then Reg
+0.5.1-
+	-Added new <bcv> search method using Costas' code
+	-Added config.ini in here you tell it what language to search for in <bcv> use the name of the file found in lng
+	-If || is found then Old method is used otherwise New method
+	-Note new method is not Pre-checkable - so if it is flagged think Old - method.
+	-<bc> and <chp> are available once per topic (Any more and they won't do anything), I recommend that they go inside the topic some place but not in the topic <:> or <c>
+0.5.2-
+	-Fixed || was broken
+	-Changed name from <bc> to <bk>
+	-Also <bcv> works in this case a note from Costas "Notice that this method will only parse a single book name (the first one)."
+0.5.3-0.5.6-
+	-BCV Select and detect works better now. 
+	-in .lng make sure -negatives are removed (they don't work at present)
+	-only use one .lng file at a time is recommended
+	-|1 after each search.pattern is recommended so Case and diacritics are used.
+	-Button in File>Reload Config if you need to refresh the data of the bcv language.
+0.5.7-
+	- the hypen "-" in the book list is now swapped out automatically internally with $ - to speed it up slightly on building this list 
+you can manually swap - with $. Now negatives should work. Please test
+0.5.8-
+	-Not much changed with hyphen - and $ other than extensive testing. To trying to make Find get - which it does not appear to recognize in Lazarus.
+	-Roman Check box added in BCV detect which also affects <bcv>
+	-<bk> and <chp> now can be in any order inside a topic it must be placed after <:> (stay away from topic title areas) and before next <:>
+0.5.9-
+	-Last VRef in Acts 14:2, 5; 1 Tim 3:5 can now be tested so 1 does not become part of Acts 14:2 note it may have a double hyperlink so this may need testing.
+	-Some speed ups were implemented such as testing vrefs between enters. (This may or may not make it faster).	
+	-A warning is given if you select from End to Start, it needs to be Start to End;
+0.6.0-
+	-Fixed negatives no longer $ is used we had to override DoCompareText in TStringList with a new version provided by Costas' code
+	-Selection logic improved
+0.6.1-
+	-Hyperlinks when clicked are show in status bar
+0.6.2-
+	-<bcv>Gen 1:1, 2||1:1, 2</bcv> now tags correctly using the new method. Note the portions must be exactly the same to avoid random links. For example
+<bcv>Gen 1:10, 12||1:1, 2</bcv> will be off link wise as well as link position wise. (There is a switch in quick format for this if needed to use ||anytext, default is off)
+0.6.3-
+	-en-dash and em-dash now work in <bcv> references or Detect references.
+0.6.4-
+	-You can now set your default file type in config.ini rvf or rtf. (Note rvf has more format support than rtf)
+0.6.5-
+	-icon update
+	-markups are no longer editable (wasn't needed)
+0.6.6-8-
+	-Ctrl+D added to Detect Selected References
+	-removed line at the end of a topic
+0.6.9-	
+	-<link><2> now creates a link under another can be used with <link> or <tlink> 
+0.7.0-
+	-<link><0> is main or <link> and <link><1> is the next level
+	-Detect reference area now has Book combo box and chapter combo box (They should notify you if bad info is entered)
+0.7.1-
+	-Combo boxes now shows first name for book number in the reference file. (Adjust this file to suit your prefrences)0.7.2-
+	-Reference hyperlinks now copy automatically to clipboard for viewing with theWord Clipboard feature.
+0.7.3-
+	-fixed link level bug
+	-b warns if Bible reference link is bad when clicked
+0.7.4-
+	-Hyperlinks got base path
+
+0.7.5-
+	-You can now set the default quickformat font for All. Change in config.ini
+	-b non-blue text can be marked with a regex in Quickformat. Useful for finding missing verse references. Note it will not revert the colors back.
+	-c now non-link text instead of non-blue and some bugs fixed
+0.7.6-
+	-F3 updated to Regex/Normal Find button
+	-Ctrl+F now opens Find/Replace Tab
+	-Reg Non-link Mark now setable in config.ini
+	-Color of mark text should revert to previous item color.
+	-Vis Mark is a test button it should just mark items within view (note items are based on formatting same format same item)
+
+0.7.7-
+	-<link> and <link><0> are now seen as <link><1> other wise the levels got off
+	-remember node does not need to be <link><2> it is those under the node that need increased.
+
+0.7.8-
+	-Added Generate Stripped Html button to Tools in Menu
+	-see folder Html
+	-regex for this is editable in html the pattern is inside pattern="" and the replace is after tab and inside ""
+	-b removed UTF8BOM
+	-c now also forum code is available - see Tool menu
+	-d \r\n in replace of these only becomes #13#10
+	-e # at the start of the line comments that line out useful for notes or testing
+0.7.9-
+	-Detect reference selection order of start to end or end to start no longer matters. Either way will work.
+	-Bullet list default button added to Quickformat area
+
+0.8.0-
+	-<slf> now supports bookmarks and popups  (This requires two loops through the module code if <slf> is used)
+	-<slf>topic&popup=2#bkm||text</slf>
+	-<slf> can be these variations: topic&popup=2#bkm||text , topic&popup=2#bkm , topic#bkm||text (Note this uses the default popup setting), &popup=2#bkm||text , &popup=2#bkm , #bkm||text (default popup setting) , #bkm (default popup setting) , topic (default popup setting)
+	-<bkm> added use <bkm>words</bkm> it places a checkpoint in the text where it is at.
+
+0.8.1-	
+	-fixed a bug introduced in <slf>
+	-b fixed bookmarkers having a duplicate number.
+
+0.8.2-
+	-You can now detect in normal and table text for the references. However, it will warn you if you try to do both. Also note. Please only detect one cell at a time. (I am waiting on some better code for this from Sergey).
+	-b text doesn't disappear in table cell
+	-c <bkm> content </bkm> now removed from topic tree
+
+
+0.8.3-	
+	-For hyperlinks to display in status bar - now please double click.
+	-You can now click on hyperlinks in tables and they should show in the task bar
+	-|_AUTODETECT_| should no longer be flagged in a reference hyperlink
+0.8.4-
+	-Introducing Docking of the editor tools, they undock by dragging off one of the tabs. Also use the tab to redock them
+	-A bug in that clicking a tab undocks without dragging (Things I want to fix)
+	-Also if you close the edit tools they are gone you will have to restart TotheWord. (Things I want to fix)
+0.8.5-
+	-Docking should work better now. Simply right click in Edit tabs area and then UnDock/Dock 
+	-b When in Undocked mode you can now align controls Top to Bottom or Side to Side. (Upon redock they auto align to Side 
+to Side.
+	-c Updated Find/Replace alignment hopefully better.
+0.8.6-
+	-Config now has find/replace (normal/regex)
+	-Edit tabs dock/undock
+	-MainForm Position & size
+	-Edit tabs floating window Position goes to the right side of the MainForm & Size
+	-There is a bug in the 1st edit tab in regards to the 3 color palets not sure why.
+	-b bug with color fixed, also removed dangerous close button, and now also the floating window can be positioned anywhere
+	-c Ctrl+E, Ctrl+F shortcuts for Endnotes, Footnotes, also hint for F3 in Find/Replace
+	-d Alt+, (<p #]) Alt+. ([p #>) inserts around selected text and changes to green
+	-e Shift+Ctrl+N (super #) superscripts and highlights yellow a selection
+0.8.7-
+	-Superscript yellow # and Footnote text with the same are converted into Footnotes
+	-Works based on a selection, the bigger the file it may go slower. (It only works with pairs don't do more than one page at a time.)
+	-b Shift+Ctrl+F for short cut of Footnote pairs
+	-b error detecting now warns better and specifically
+	-c updated error detecting for footnotes a bit better
+	-d error detecting now warns and does not make a change if there is a problem.
+0.8.8-
+	-Error which cut off a paragraph break on last footnote corrected
+	-Error detection now says "No pair MATCH" if there is not a corresponding pair
+	-Error detection now also says "Not a UNIQUE pair" if there is like 3 of the same pair indicator. (To fix replace the identical number with a number larger than the max footnote and like wise make sure the footnote has that same larger number.)
+	-Zoom + or - is now in the Tools menu
+
+0.8.9-
+	-Added import of .html, .htm, .xhtml (Multiple files at once is possible)
+	-File > Open .html ....
+	-b Added an indicator to tell what file is being added to the RichView
+0.9.0-
+	-ALT+L now copies the text and the text can have bold & italics if checked. ALso you may turn on the # if you need those links like <link><#> (Also bold & italics can affect <ref>
+	-QuickFormat content moved to Edit tab area.
+	-b <link> added to Quick format (removed) and Bold, Italic
+	-c now <2> <3> <4> <5> <6> next to link button for same purpose but with + <#>
+0.9.1-
+	-Detection algorithm improved (needs more work need code from Costas)
+	-b fixed a bug I introduced in implicit refrences in unicode
+	-c added more feedback in Build
+
+0.9.2-
+	-Added "Check Regex then Format" setting to Find/Replace Pairs
+	-Added Normal/Regex tab to Find/Replace Pairs
+	-b fixed Normal search (regex characters can now be done in Normal) I was generating the regex pattern when it was not needed in Normal. Which caused an error
+	-c hidden UTF8Bom bug smashed!
+	-d "Check Regex then Format" default not checked
+
+0.9.3-
+	-Docx import added thanks to v19 update
+
+0.9.4-
+	Detect now includes a Font Tools area, (It builds a list of fonts while displaying their styles, note if you need more info about it copy and paste it to the main TotheWord area then check in edit on its style qualities.)
+	b- update to the BCV Reference detection code (now it copies the selection to another area works on it and pastes it back. Which may help with not dealing with all the text however formatting after it is pasted back is slow.)
+	c- updated to TRichView 19.1.1 should fix docx white space error and some Asia font errors in theory.
+	d-f- Detect Reference speedup?
+	g- Dectect reference speedup tests for footnotes.
+	h- implicit references fixed
+	i- Detect Refrence ignores hyperlinks unless ALT is pressed like Ctrl+Alt+D or Alt when clicking the button.
+	j- fixed bug introduced with ignoring hyperlinks (it only ignores the first hyperlink if say in John 1:1,2,3,4 if this is hyperlinked to begin with it ignores it otherwise it fixes it. Otherwise we have to call format and that introduces a slow down.
+	k- 'and', 'or', 'compare' works by substituting them for , with the same amount of spaces after as the word it replaces like 'and' with ',  ' also 'to' is replaced with '- '
+	l- fixed rtf open bug, and 'and' versus ' and ' bug. The '#and#' no longer works for safety.
+	m-n - various more bug fixes. Not sure we will be able to get every thing since there may be more from Costas that I need. 
+	o-     //Fix for καὶ οὐκ εἰσί of Rev. 2:2, 3:9; all are fond  //Fix for 2 Cor, 1:13, the comma needs fixed  may fix it  AND some negative look aheads for verse, verses, vss etc.
+
+0.9.5-
+	Fixed I think Endless loop bug when Find/Replace was set to Normal with No formatting and CheckRegexthenFormat unchecked.
+	-b added Justfied to Left Paragraph alignment button
+
+0.9.6-
+	-Speed up Footnotes thanks to Sergey's fix in delete line 8882 in RVERData.pas
+	-b playing around with this fix
+	-c no more "cheat" code (no longer needed may actually slow things down)
+	-d NonMove checkbox in Detection area, try it unchecked and checked to see if there is a speed difference. (If the file is huge there may be a difference on the mode operation because of putting the content back.)
+
+0.9.7-	
+	-Added a button to change cell color to transparent, and borders to 1 px wide.
+	-b added Special xhtml, htm and html converter under File > Open > Special Open
+	-c-d Added Draft mode in building (ignores <bkm> and <slf> tags)
+	Updates to Special converter
+	-e Footnotes should no longer have left overs, not should its number be in the topics. Also tags are now removed from topics. [p #> etc now removed from topics.	
+	-f (not named f) fixes some WideString/String issues and alignment issues
+	-g Footnotes now corrected. They are still moved to later to deal with the mismatch of footnotes found in topic/links tags. 
+	-h-i <ref> now corrected it was off like Footnotes
+
+0.9.8-
+	-a Fixed extra line at the start when topic label is not included in content
+	-b Overall End Notes now have their references processed. However this is much longer because all content must be processed. Only use if all the notes are like in a file at the end. If they are in each file you may not need to use.
+	-c1 Now the XHTML-LeftOverTags.txt is saved to the location of where the xhtml files are loaded from. 
+	-c2 Added a Detect Reference option for speeding up building tests
+	-c3 removed [p \d+> or [p page\w+> from <:> for 
+	-d1 Table lines are now Silver/Gray and thin
+	-d2 Add subjects.font and subjects.font.size to config for tree font
+	-d3 Added <slf>&popup=2#p67||67</slf> useful for page numbers
+	-d4 additional table/cell fix
+	-d5 Fixed tags in tables (they should now work on build)
+	-e1 Updated Buttons into menu & updated <slf> and <p#], etc.
+	-e2-3 updated Editor tabs
+	-e4 <:>Topic and <c>Commentary</c> added to Edit tab of Editor
+	-e5 further adjustments to Topic/Commentary Mark up in Edit tab
+	-e6 futher adjustments regrouping under Topic Markup
+	-f1 Added RTL to file menu for testing etc.
+	-f2 many epub updates, tables gray lines, paragraph spacing, drop caps, transliteration (just normal for now), updated <bkm>tag</bkm>keepwords
+	-f3 default table now in standardized format. (note 100% width always. it can be changed later in table properties.)
+	-f4-5 added sticky/format painter click off or use esc
+	-g <c>Genesis</c> now fixed plus other xhtml/html adjustments
+	-h2 <c>Genesis</c> now correctly fixed it had adjusted chapters wrongly which affected <c>Mat 13:43</c>
+	-h3 updates to importer, Added Recolor for Greek/Hebrew which tests before adding color if not Maroon or Gentium then it updates Greek. If font size is larger than 12 for Greek the font size is not changed. Same for Hebrew if not Maroon or Cardo then it updates. If font size is larger than 14 for Hebrew font size is not changed.
+
+0.9.9-
+	-a Added regex to the sstart of xhtml it is a special file that must be in the same folder as the xhmtl or html file called XHTMLREGEX.txt
+	-a It takes the format of // are comments and are ignored as well as blank lines
+	-a regex is 'search'tab'replace' so '(\d+)'	'Test $1 Test'
+	-a Not recommended for beginners the regex may not be very forgiving so becareful
+	-b <slf>.*?\|\|(.*?)</slf> keep words were not working in <link> as well as <str>, <mrph>, <bcv>
+	-c Inside footnotes now can add </slf> closing tags
+	-d Fonts can now be Embedded into a module. Settings are maintained in the config file. But if the font does not exist in the location specified you will be alerted at the start of build and may exit if you so choose.
+	-d In The Regex file You may use TotheWord tags such as <bcv> but it must have _tw so <bcv_tw> and </bcv_tw>, the same for, <link>, <tlink>, <str>, <mrph>, <slf>, <bcv>, <bkm>, <ref>, <c>, <:> so all will be like <tagname_tw> or </tagname_tw> and these will now be past along to TotheWord 
+	-d Regex file can now have up to 4 sections, 2 are only needed 3rd and 4th are optional
+	-d The sections are as follows search tab replace tab [regexoptions]	{repeat_until_no_match} 
+	-{repeat_until_no_match} must be exact possibly numbers may be possible in the future but be careful with this so you don't get an endless loop.
+	-d The regexoptions are as follows (they may be combined such as [rcoUTF8, rcoSingleLine]:
+         rcoAnchored,                  // PCRE_ANCHORED
+         rcoIgnoreCase,                // PCRE_CASELESS
+         rcoDollarEndOnly,             // PCRE_DOLLAR_ENDONLY
+         rcoSingleLine,                // PCRE_DOTALL
+         rcoIgnorePatternWhitespace,   // PCRE_EXTENDED
+         rcoExtra,                     // PCRE_EXTRA
+         rcoMultiLine,                 // PCRE_MULTILINE
+         rcoUngreedy,                  // PCRE_UNGREEDY
+         rcoNoAutoCapture,             // PCRE_NO_AUTO_CAPTURE
+         rcoUTF8,                      // PCRE_UTF8
+         rcoNoUTF8Check,               // PCRE_NO_UTF8_CHECK
+         rcoAutoCallout,               // PCRE_AUTO_CALLOUT
+         rcoPartial,                   // PCRE_PARTIAL
+         rcoDupNames,                   //PCRE_DUPNAMES
+         rcoFirstLine,                  // PCRE_FIRSTLINE
+         rcoNewLineCR,                 // PCRE_NEWLINE_CR
+         rcoNewLineLF,                 // PCRE_NEWLINE_LF
+         rcoNewLineCRLF               // PCRE_NEWLINE_CRLF  
+	-e Turned the pre-export check back on (not sure how it will work it is out of date in some areas)
+	-f Added <> to the regex of the Detect ignore. Helps it work with <ref>Jude 1:2</ref>
+	-g Improved DetectRef inside of pre-load for xhmtl/html to now include verses, verse, vers, ver, vss, vs, vv
+	-h Added F4 for Regex Replace
+	-i Removed blank line when Topic is not included in content for General Books, Dictionaries, etc. everything but commentaries (which was fixed previously)
+	-j fixed typo on font name in RVHtmlImporter 1 changed Segio UI to Segoe UI
+
+D1.0
+	-3 Added a +1 back in I might have removed the wrong one!
+	-4 Updated Mark Non Links and Remove Markup in Hyperlinks on Editor tab.
+	-5 Updated Hints for these buttons
+	-6 Adjusted Yellow Markup to lighter so the hyperlinks can be seen easier.
+	-7 Updated Both Detect Reference Normal and Special Open. They both had ; for the words to and a (spanish to) should have been -
+	-8  Normal Detect Reference was missing roIgnoreCase on the NegLookBehindStr fixed
+	-9 Added more roIgnoreCase to different Regex in Detect Ref
+
+D1.0.0a-
+	-a Massive changes - TotheWord is now built in Delphi 11 so unicode and other things are much easier to do now. However, there will need to be much much testing. Also Find/Replace pairs need loaded and verified and then resaved since the Regex options have changed.
+	-a Special open needs fixed Reference detection is wrong.
+	-a Reference Detection in general is broken and will cause the program to freeze. I need to fix it.
+	-a If you could let me know of any other bugs you come across. Thank you.
+	-b Fixed, Include Topic in context, Draft Build, Show export, Pre-Export Check (NEEDS UPDATED)
+	-b Went through and fixed standard formatting, however, if there is an error perhaps it needs to be GRichViewEdit or RichViewEdit in the RVGetTextLength and in RVGetTextRange
+	-b Font Replacement Tool in Detect. It is very fast. You can click in the RichViewEdit and it will update the first font box then input in the Replace and lastly click Replace Font.
+	-c RTF format works in Module export. However, I am still working on RVF. 
+	-c Note docking has not been worked on yet. Still working on detect references
+	-d RVF works on Module export now.Also note RichView is 19.5 so this may have changed some things.
+	-d still working on detect references.
+	-e ConfigFile now should work with Unicode characters
+	-e Index out of bounds bug in "Build - Stage: <ref> - ...." see testprob.rvf <ref>Ecc 1:1</ref> -- the group didn't exist so make sure to use if m.Groups.Count >= 7 then for example. Hmms much different.
+	-f Fixed interface, still docking to go. Moved some items around in interface Detect/Reference
+	-f SQLite3 now back to Costas' version much less overhead
+	-g TotheWord version added to config when module is built.
+	-g Detect Verse References hopefully fixed! Needs much testing.
+	-g Revelation, Romans, Psalm, Exodus, not Detecting references why?????? It is not matched in ParseBookNameW -- I think it was a sorting problem before the - is before like -relation so Romans is ignored it needs to be at the bottom of the list!!!IT was fixed by changing - to @ and WDASH from '-' to '@'
+
+D1.0.1
+	-a Added Scrollbar to Topics area and made Topics Client Align instead of Left so it fills the area better.
+	-b Added Scrollbar to References
+	-b Pre-export Check returned (But please understand it is not nearly up to date with the acctual Build Module
+	-b Show Export Check moved up (Useful for seeing what is going on but can slow things down in Building)
+	-c Detect Verse Reference works better had some various bugs like II Timothy 2:10 not working and colons being captured etc.
+	-d fixed buttons on interface
+	-d Fixed Standard formatting. Results needed to be Result:=m.Groups[0].Value instead of Result:=‘ok’
+	-d Standard formatting updates for Greek ([—\-]*\p{Greek}+[—\-,.·;]*) regex was \p{Greek}+ there may be other additions needed (I had to remove the spaces for some reason it was not formatting the words right)
+	-e Application Name Build are now stored to a string for the Config table of a module (It was sorta working earlier now fixed)
+	-e Docking has been updated (there are a few small bugs) But it should generally work.
+
+D1.0.2
+	-a Detect Refernce in importer (xhtml/html) fixed
+	-a some additions for the Edited files in the importer (xhtml/html)
+	-b Find/REplace colors for FInd and Replace now display according to the pairs when they are loaded.
+	-b Find no longer gets loopy when "Use Format Options" and "Check Regex then Format" is selected
+	-b Find color and background color now work in the up state as ignore this color.
+	-c Find/Replace now has only Regex then Format but it should work better. Remember the regex is first then if the format matches for the whole regex it is used.
+	-c Normal in Find/Replace is not recommended.
+	-d Updates to Find/Replace buttons, the right click on buttons is now gone (only remains on Find Format for changing all)
+	-d The Find setting buttons now have a grayed out state instead of a box
+	-d The Replace settings no longer have a box setting either on/off (I am trying to figure out what to do about normal, subscript and super script since technically there is not an off state.)
+	-d There is a font setting picker on the tool bar of Find settings and on the Replace Settings tool bar
+	-e/f Format then Regex added (Find, Replace, Replace All) need tested (To turn this mode on make sure "Check Regex then Format" Is unchecked (TESTING is needed, but please specify all the settings even save them to a Find/Replace Pair and send me this if you find a bug)
+	-g Find (Format then Regex) working better, as is Replace when using \p{Greek}+ but Replace All missing some (Not sure why???)
+	-g Find (Format then Regex) messing up also Replace with .+ but Replace ALl is working pretty good. (Not sure why????) 
+	-g Regex then Format is working pretty good overall
+	-g some Hints changed, not sure when/if I can get to button changes it is more complicated. I would need to build new button images.
+	-h Find (Format then Regex) should work right and not select the wrong portions whether with \p{Greek}+ or .+
+	-h REplace (Format then Regex) should work right and not select the wrong portions whether with \p{Greek}+ or .+
+	-h Replace ALL (Format then Regex) should work right and not select the wrong portions whether with \p{Greek}+ or .+
+	-h Find and Replace start from the carets position
+	-h Replace All start from the first item and goes through.
+	-h Note Replace/Replace All does not work in a selection yet
+	-h Find/Replace/Replace All has not been tested with tables so be careful!
+	-i 0 Bound error should be better
+	-j Escape key added for loop of FInd/REplace/ReplaceAll
+	-k Escape key added to build loop
+	-l Updated Find/REplace Format button hints and refined their code
+	-l hopefully fixed some Format button oddities on FInd/Replace
+	-l Detect Reference Chapter drop down now works again.
+	-m Dialog added for Reference Detect on Special Import of html/xhtml ever 100 loop a 3 sec dialog will display showing how many characters are left.
+	-n Red format better (if you find more let me know) for Mark up and Detect Reference
+	-o Fixed Find/Replace Bold button hints
+	-p Mark Non-Links better
+	-q Mark Non-Links now use background color instead of text.
+	-r Mark Non-Links and Remove Markup are now two separate buttons. Yellow is the markup color, also it removes all markups "quickly".
+	//New Regex Tags for the Special Open
+	// double back slash is a comment
+	'regex search' tab 'replace' tab [optional of one or more of those below]
+	'(\d+)'	'$1test'	[roMultiLine]
+		roNone
+		roIgnoreCase
+		roMultiLine
+		roExplicitCapture
+		roCompiled
+		roSingleLine
+		roIgnorePatternSpace
+		roNotEmpty
+	-s Added Help for Special Open
+	-s Added XHTMLREGEX.txt to Templates folder
+	-t Updated Detect Reference code, better, faster
+	-t Added Standardize Table (Doesn’t do cells though)
+	-t updated Mark Non-Links (works better with cells now)
+	-u Updated Detect Reference removed a +1 it was affecting verses 1, 2, 3, 4 that is detection when no book or chapter is found. It was only marking the first number. Right reference wrong numbers.
+	-v Works better with tables on Find/replace but but tables that don’t have rows (if they have rows welll it doesn’t work yet - sorry!)
+	-v Updated Find/Replace/Replace All to give better progress indicators.
+	-v When the cursor is flashing in Find/Replace/Replace All check the progress bar there is a reason. It may be going through the items looking for the appropriate formatting. (ESC to cancel)
+	-w updated strongs to strong in config. 
+	-x Press ESC to cancel added to Formatting Hebrew, Greek, Strongs, etc. see progress bar
+	-x Select section of Formatting Hebrew, Greek, Strongs, etc possible now. See check box in formatting area.
+	-y Added Romans chapter 6 to the Detect References (it becomes Romans         6) so that the detect reference recognizes it. I had to increase the space amount in Costas' regex. Also in the Special Open
+	-z added back removing a +1 it must have not saved!	
+
+D1.1
+	-1 Added through to Detect Reference so verses. 2 through 4 is verses. 2-4
+	-2 Add Time Stamp in File Name to Build Module menu || also add to config.ini file.
+	-- Added Default Markup button for Non LInk Markup (since now the markup is saved to file. However there is still the main default version)
+	--Updated error code of config save to alert user to possibly not having the latest config.
+	-3 Updated yellow on Mark up back to Yellow
+	-- Now New Files don't make white background but the grayish blue
+	-4 Regex Replace now has hint for (F4) 
+	-- Detect Reference is now F5 or ALT+F5 (special) see hint instead of Ctrl+D
+	-- 3 variety of presaved Markup Regex, Regular, Implicit, or Old
+	-- Markup is now removed on Detect Reference Either All or Only Link - see Hint
+	-5 Updated GbutEsc to the False where it needs to be “hopefully” if after pressing ESC something finishes surprisingly fast this may be why (A GbutEsc:=False may need added)
+	-- Caret was getting stuck due to not letting the Regex set FoundBool to True (It never got turned back off - oooops)
+	-6 Added copy Reference links to clipboard (note I attempted to make it only get new links in a selection but it will get most of the links, I could have it do all always)
+	-- Added Remove All Markup to config
+	-- Added Topic to Content in Build tab to config
+	-7 Made hints with || show up correctly	
+	-8 <bkm>pages in Import can now have Roman Numerals or other characters besides Numbers
+	--Fixed error through out Build that was not allowing it to go to the start of each section for each different markup especially <bcv> <slf> 
+	-9 Reverted a fix in the Regex portion of the Importer so that Unicode works correctly
+
+D1.2
+	-0 Added Mark False Link - in Extra Edit
+	-- Added lowercase to Detect References (if checked finds john 1:1 or is 7 but if not only gets John 1:1)
+	-- Added lowercase check to Special xhtml/html importer. 
+	-1 Added Uppercase check of like GA 1:1
+	-- Fixed lowercase check had to also check for "^ " the space was messing up the lowercase
+	-- lowercase changed to "ignore case"
+	-- Updated Regex to lowercase ^[0-9 \(\)\[\]\{\}\;\.,"'']*\p{Ll} AND UPPERCASE ^[0-9 \(\)\[\]\{\}\;\.,"'']*\p{Lu}{2,}
+	-2 Standard Formatting > Font and Color > If On Search Footnotes (Then Greek, Hebrew, Strongs, Morphology, Recolors) will go through the footnotes as well.
+	-- Added Format painter button in Detect Reference area (I couldn't do HotKey for some reason)
+	-3 Implicit Detect Reference updated
+	-4 Added Regex Count in Find of Find/Replace it is the button 123 also next to it is Fn which is for footnote count. (Note this should work inside of tables either way.)
+	-5 Added Unlick in Detect Reference
+	-- Added goto next checkbox under replace (default on)
+	-- Updated implicit/regular detection with removal of . at the end of each divided string of references (hopefully will work and not cause more bugs) - it was causing misalignment
+	-- Updated Case detection in Detect Reference so not II Timothy 2:1 should work.
+	-- Added a new type of footnote import in Special Open unique_footnote (this is intended to keep each footnote unique if they are not already.) However, you must put in something in each file to help make it unique.
+
+D1.3
+	-0 Interface additionas many
+	--Editor Mode 
+	--- switch between Book, Bible, Regex Editor
+	--Book Editor (much the same)
+	--Each Editor mode has its own Content (All appear in the Main RichViewEdit area)
+	---Open Updated to a new area for Book Editor
+	---Open > Book Editor > Special Open area > Load (To be implemented this will allow you to load a ttwregex file instead of the XHTMLRegex.txt file. So you can reuse these easier or put them where you want)
+	---Book Build is what use to be Module Build (It is the same overall)
+	--Bible Editor
+	--Each Editor mode has its own Content (All appear in the Main RichViewEdit area)
+	---Not really implemented (however there is now a Bible Build tab with config info that is beginning to come along)
+	---Open Updated to include Bible (It will be controlled primarily by a .ttwregex file same format as the Book ttwregex file.
+	---Please let me know if I am missing anything visually in the Config of Bible Build.
+	---Apocrypha in Bible Build > Build will be interesting to implement technically the RVF or RTF file of it will need to be loaded into the Book Editor side so that it will all mesh together correctly. In case of needing to link between footnotes and apocrypha. 
+	--Bibles will really be built by the ttwregex file. Which implements the formatting. It is a regex pair file. Much like theWord Bible Verse.rule but more...
+	--Regex Editor
+	--Each Editor mode has its own Content (All appear in the Main RichViewEdit area)
+	---Open > Regex Editor
+	----Format this is if you would like it to format the comment section for you automatically (Slower load but helps visually either way is fine)
+	----Open works you can load a ttwregex file or a XHTMLRegex.txt file from previous
+	----I am not sure I like where the Regex Save As button is. I may add this to the Save As area under File we will see though it is special since it is a UTF-8 ttwregex file. (Thoughts??)
+	--Technically ttwregex files can be edited but are not yet supported in Book Special Open or in Bible yet.
+	--Find/Replace small update
+	----MultiLine and SingleLine are no longer grouped together since you can use them separately. (This should not affect the find/replace pairs I tried to make it compatible with old pair files.
+	--Across Book, Bible, and Regex Editor you will find that Find/Replace is enabled since this will be beneficial in any mode.
+	---Bible will not really need a color edit tab since the tags are what control elements. (I really hope we can have theWord Bible Viewer code connected here but for now it will just be the code viewer mode.)
+	--Help Files many many updates
+	----Regex Options is now the correct version
+	----Book, Bible Editors are todo they are basically a template holder
+	----Special Open Help removed the Regex pairs portion now in its own file
+	----Bible Module specification file added.
+	----Regex Editor Help has some info in it.
+	----User additions to help files are simple. Just open the .rvf or .rtf file.
+	------For the Book, Bible, Regex helps it is simple to link like in the files already. It is just a bookmark. You can hyperlink to a bookmark by putting # first than the bookmark name. (I could use some help with building the help files)
+	--Config file has some updates (more to come)
+	--map folder
+	----new has some map sample files
+	--Example folder
+	----small examples to be here for learning purposes
+	--templates will probable have like a sample ttwregex (we will see)
+	--1 Added No break space and other space types in Reference detection, plus other types of hypens, and a bit more
+	--2 Changed Replace TEdit in Find/Replace to TMemo so it can have multiplelines (TEdit was kept just incase but renamed for now)
+	--3 Mutiple additions in RegexEditor
+	--4 \r and \n supported in RegexEditorRules, and in Find/Replace - Replace side. 
+	--5 Some Save/Save As settings updated. (Now Book and Bible won't accidentally overwrite eachother in Save)
+	---Should display the file name in the Caption area. Also somewhat in the Status bar area for Regex, but Book and BIble not so much in Status area I think for Save As
+	---Bible Editor Config files should now work.
+	---Map files, and Processing to go
+	--6 Updated Regex Rules to include [file=all], [file=specific] note must include name and ending, or if you don't put any [file= in the file it is treated like an all
+	---Bible tags are <bk_bi:\d+>,  <bk_bname:Genesis>, <chp_bi:\d+>, <ver_bi:\d+> the <bk_bname:name> are defined in the Bible Editor Help, there are located fullname or abbreviations. (Regex rules can be used to map to these names)
+	---The Bible tags are used in build step to put the book, chapter, verse in the right place so Map files will work. However it is important to make sure <ver_bi:\d+> is at the start of each line for the map files to work right.
+	---There is a warning on file line amount on building
+	---About file, and Map file need done yet for Bibles. 
+	--7 About File for Bibles done (only Map file left)
+	---ERROR on Bible file now counted and informs user (only so far for <bk_bname...
+	---RegexRules Matches are now counted and saved to file if checked in Open > Book Editor > 5.... They are saved to a file much like the Edited sample file except its ays -Matches.txt
+	---The Matches file looks I dentical to the TTWRegex rules file except it says MATCHES=#>>>> before the lines 0 if no matches or howmany matches there are.
+	--8 Unicode now works for Verse Detection inside of the Special Open for xhtml, html, and htm Note requires DIUtils
+	---Map file added to working with Bibles.
+	---Apocrypha support yet to go. but in time
+	---Pre-export check tells you a bit more now.
+	--9 Pre-export updated a bit (still not as good as build)
+	
+D1.4
+	--0
+	---Regex Rules have been spead up. They are now loaded once instead of per each Edited File. Also if SingleLine is NOT checked then the Edited File is done a line at a time instead of the whole file as a single line.
+	---Find/Detect Pairs added to Detect Tab
+	----To add pairs select some text, and then Right Click in the Find/Detect Pairs area. You can then Add, Delete a Pair or Run All Pairs
+	---Reference Tab moved to its own. (I may need to work on docking again.)
+	---Regex Rule Engine should be fixed now, Matches, and Files should work.
+	--1
+	---Find/Detect Pairs updated, no more template, now loads correct file instead of Find/Replace Pair, also shows File if load, has various warnings now. For example if no pairs but , Run All Pairs it will warn you.	
+	---Iinterface updtates like Build Bible, Build Book
+	---Fixed V11Map I had set it only to OT
+	--2
+	---Check Regex Rules now checks for basic formatting in the Regex Rules (It does not check regex though)
+	--3
+	---Error List window now for Find/Detect pairs instead of just a single popup (This ErrorList window may be helpful in other areas at some point)
+	---F6 Is now for Add Find/Detect Pair
+	---Put F3, F4, F5, F6 on their respective buttons - more visual
+	--4
+	---Infinite looping message and skips if infinite loop happens (basically it slows things down a bit but will no longer infinite loop)
+	--5
+	---Better error messages in Find/Detect Pairs, They can't be longer than 1028 characters for now. I can't seem to figure a good work around.
+	---Margin, text-indent, (possibly padding not tested as much) now supported in html. Please see Special-Open Help for the proper tags.
+	--6 
+	---Book Config file now has a Build Options Section
+	---ALso the Open>Book/Bible/Regex has some of its options saved to the config file of the TotheWord Program
+	---Note the config file engine has been updated. It tries to update the file with an automatic edition if the setting doesn't exist. Programatically on close.
+	--- Added <caps> and <overline> to Special Open see Special Open Help
+	--7
+	---Support for Unicode in Regex Rules and in Book>Special Oepn/Bible Editor > Open should now be correct. (Adjustments made to Regex Rules Engine
+	--8
+	---<bk_bname:([^>]+)> wasn't getting removed correctly on Bible build
+	---Bible help was updated.
+	---Added better Error reporting of Regex Pattern/Replace
+	--9
+	---Added () pairs and $NUMBER testing in Regex Editor > Check Regex Rules (It tries to ignore \\ and \( or \) in the pattern side)
+
+D1.5
+	--0
+	---Worked on removing blank lines on Open > Bible (That were added due to #13#10 at the end of TStringList.) 
+	---There is also a check box in Bible Editor. That removes other blank lines.
+	---Added FinalRegex.BUILD to [file=, also modified file=all OR No file= to not work on The FinalRegex section which works on all the files joined together. This is where FinalRegex.BUILD section comes to work.
+	--1
+	---Made it so that if implicit is checked only like #:#, verse #, ver #, etc will be got in detection UNLESS Implicit Any Number is checked.
+	--2
+	---Problem with implict detection and a verse larger than the chapter number added "AND (CurrentChapter = 0)"
+	---Alerts user to a reference out of range. It attempts to tell them if it is Starting Book, Ending Book, Starting Chapter, Ending Chatper, Starting Verse, Ending Verse.
+	---Added Remove markups automatically on Build Book
+	---Fixed introduced bug on Deletion of Previous module file.
+	--3
+	---Added to XHTML-LeftOvertags.txt now XHTML-LeftOvertagsBadRef.txt if there are bad Verse references (Note Chapter references if out of range are ignored in the Verse Detection code already)
+	---At present these bad verses are still linked but are now in the the BadRef section of XHTML-LeftOvertagsBadRef.txt if Detect References is turned on. (I chose not to change chapters because it could cause problems with other code on other programs.
+	---Also note the FinalRegex.BUILD that is in Regex Editor is only for Build Bibles. I added this to the hint.
+	---Now if Find/Detect Paris, Find/Replace Pairs or References are not saved a Warning is given on close that allows Close to be Aborted or Ignore and continue close.
+	--4
+	---Find/Detect pairs should now have the right chapters, needs texting
+	---Information List can now be seen through Main Menu > Show Info
+	-----It can also be cleared
+	-----This is were Errors from Find/Detect are shown
+	-----This is where results from Find/Replace pairs are shown
+	-----May be used in the future for other items. (Just let me know if there is a Popup message that would be better in this setting. However, we want to be careful not to have this form popup all the time sorta. It won't really slow down but it could get annoying. Though it can be left open.)
+	---Escape Characters added see Find/Replace tab for the Escape Characters entry area. (New entry in Config file) (Not sure if this is a good location for it but the nice thing is Find/Replace is in every editor)
+	-----Note it requires three Hoty Keys. Ctrl+C to prep the clipboard Ctrl+K to do the escape then Ctrl+V to paste it back. (Note this works on any text copied from any source/program as long as you click on TotheWord (If you click out of it) then Ctrl+K before pasting it back to where ever! :)
+	---Added Random Id for Book Config, and a Random Id for Bible config
+	---Added check on ID length if less than < 11 it warns of being Official and suggests the user uses the Random ID
+	--5
+	---Updated Verse Detection algorithm to only go 200 characters past bad reference for some context. (This affects Select and Detect and Loading a book and detecting.)
+	---Updated the Map File function to Costas' widestring version of the GlobalUtiles StringListToStrW so that it now works instead of having NULL
+	---Added Detect Ref All so it goes through the whole document. In theory it should skip paragraphs with Tables so that will need to be done manually at present.
+	--6
+	---Updated Detect Reference All to have user input of numbers like 100
+	---Updated Detect Reference All to go backward 2 items just incase of Reference overlapping format.
+	---Major update Verse Detection algorith should now handle tables. Even multiple tables in a row. (This addition may slow down overall detection but hopefully not by much.)
+	---Verse Detection algorithm also works with footnotes as well.
+	--7
+	---Added LTR Select all option: It mainly affects Hebrew (I may eventually leave on always but for now kind of reviewing.)
+	---New Edit file generated with Detected Reference links if Edit File is selected for Book.
+	---Range detect error fixed in regards to like 1 Maccabees which is 99 which is past the 66 NT/OT Books. (If we support apocryphal links someday this will need changed.)
+	--8
+	---Added new file_footnote (changed to file_unique_footnote) to Special Open see the help file for further explanation.
+	---Now Book and Bible config Editorial comments are multiline (Note Bible config comments don't need a # put before it is automatically added)
+	---file_footnote changed to file_unique_footnote (better reflects that it now also has a unique number unless {ncnt} is put in the identifier)
+	---{cnt:#} added to each unique_footnote or file_unique_footnote unless {ncnt} is added to the identifier (This happens during the import phase. Note the phases are 1. Regex Rules 2. Detect References 3. import (These phases happen twice in Overall end notes, in regular end notes 2. only happens once)
+	---Special Open Help file has been updated with more information. 
+	---footnote and note are kept for backwards compatibility but do not have a unique {cnt:#} so not recommended for use.
+	---Added tag real-point-size to <font tag. so <font real-point-size=14> would be size 14 font.
+	---Added Total-Matches.txt - should be sorted and merged the lines and the count. (THis is for Book Editor and Bible Editor Regex Rules Matches)
+	---Updated Total-Matches so now all but ^FILE lines are ignored whether blank, //, [file, tabtab, etc.
+	---NOT MATCHED File now shows 0 Regex matches instead of the bug amount from the previous matched File.
+	--9 
+	---Internal reworking of Find/Replace specifically Format then Regex
+	---More internal reworking and speeding up of Find/Replace/Replace All
+	---More internal reworking. (Only affects Replace All (Format/Regex Priority)
+	----Addition of Character Line Max in Regex Tab area of Find/Replace
+	----Addition of Item max in Regex Tab
+	----Addition of Regex Priority Full Length (Needs tested but only for Regex Priority it is for SingleLine or other random things if you need to swap from some place in document to bottom or top.
+	----Addition of Character Length actual of text being worked through in Regex Tab (For Regex Priority it should stay the same as Character Line Max in Format it will vary but max at Character Line Max) 
+	----These may go away but they are good for testing adjusting.
+	----Addition of a Timer now displayed on end of Replace All for both Format and Regex Priority.
+	---Added Instant content to the Regex Editor. Trying typing [ or / or ' and it should get the format and input ready.
+
+D1.6
+	--0
+	---Update version info
+	---Minor adjustments to internals of Regex Priority (trying to use less functions)
+	--1
+	---Fixed unicode with other languages like Greek in cached language for Detect References
+	---Various internals speed ups for Regex Priority
+	---Made so the interface doesn't update on Build of Book (hopefully it will be faster and yet work good)
+	---saving to RVF for theWord now works in the Delphi version. 
+	---More informative on the footnote error id and tag in the XHTMLLeftOverTagsBadRef file, also the result file will dispaly ERROR in red with a message just search for ERROR in Find/Replace.
+	--2
+	---Updated Find/Dectect pairs now saves Any Implicit Number setting (tries to maintain backward compatibility with previous FRP)
+	---Updated Find/Detect Pairs should no longer flash on and off.
+	---Warns on Add Pair of Find/Detect pair if footnote or table are included (you can select in a cell just not the whole table I believe)
+	---Surogate pair unicode now support finally whew
+	---added swap character(s) word pairs under Extra Edit (note they are really regex pairs that operate on the present setting of Find/Replace)
+	---I would like to add this same feature into a special Regex Rule but still thinking on this.
+	---Swap characters tab added, Swap check box added in Find/Replace (replace area), this works with the find options and the replace options (not the regex though in replace)
+	-----See the on screen info in the Swap Characters tab for more info in how it works.
+	---Detect VRefs All now works with even just one line (item) in the file (it was failing before on this.)
+	---<:>Title in Special Open hopefully will be the right style from now instead of the random red, or other things.
+	---A bit of update in regards to <br> or <br /> in the importer
+	---Now <:> automatically removes '\[p ?(\d+|\w+)>' AND '\[p ?page(\d+|\w+)>'
+	--3
+	---Spead up character swap and added more information to the Swap tab
+	---Strip diacritics in Swap characters
+	---Lowercase in Swap characters (CAREFUL affects regex portion as well)
+	---Hash tags enabled for Non-Regex Mode (Regex Mode still available) Hash table mode is best used when full match is desired. 
+	---All of Standard Formatting > Font and Color has been sped up. TODO is the rest of Standard Formatting
+	---Find/REplace count better when doing Swap Characters (If no swap characters match then it doesn't count)
+	---A few updates to make sure Regex Mode is working right as well.
+	--4
+	---# was being removed from <slf> links so bookmarks weren't working right for manual bookmarks added via Bookmark editor in TotheWord
+	---Book build should now be faster due to a change in updating the RichViews.
+	---# is now removed and then added back in later for <bkm>....</bkm> or for manual bookmarks added via Bookmark editor in TotheWord
+	---More than one topic can now have identical bookmark names and still work.
+	--5
+	---<rmv> tag added for support inside the <:> or <link> so that you can remove text from the topic tree. The content remains inside the content portion with the tags stripped away.
+	---<rmv_tw> added to Special Open import for html, xhtml. 
+	--6
+	---maxverses added to Bible config
+	---<rmv> can now span multiple lines as well as other tags like <str>, <mrph> etc. 
+	--7	
+	---If there is a [\r\n]+ it is replace with a space inside of the topic tree for <:> or <link> this should make things easier overall
+	---</:> has been added to the TTW interface.
+	---You may mix single line <:> with multi line <:>....return....</:>. However, <:>test</:>text<:>test2 won't work when on the same line One or the other not both on a single line. Also note 
+	---You may even use <:>text text</:>text to shorten a topic  (NOTE if this is really helpful I may fix this for </c> but it is complex to fix as of right now </c> can't be used to shorten a topic)
+	---</:_tw> has been added to importer
+	---ALT+5 is the hotkey for </:> in TTW.
+	---b Fixed when <:> was only in the module or the last topic in the module. Also built in a speed up for when there are no </:> or if from that point on no more. 
+	---c Updated page marker removal in <:> and <link> for topic tree
+	---- Added em dash — to <ref> 
+	---- Added em dash to <ref> in precheck
+	---- Added em dash — to <bcv> 
+	---- Added em dash to <bcv> in precheck
+	--8
+	---<:>Title - fixed being red on 2nd load of Special Open
+	---b
+	----Restored error note to TTW interface for unmatched footnote links
+	---c
+	----<chp_xref:whole> generates the chapter like 1-31 Used like: <RX 1.1.<chp_xref:whole>> so then the RX becomes <RX 1.1.1-31>
+	----Don't start search from top check box added to Find/Detect pairs.
+	----Fixed it so if DNS was not part of an earlier Find/Detect Pair it automatically is off.
+	---d
+	----When Detect ALL is pressed Implicit ANY Detection is turned off.
+	----Reworked the conversion back to RawByteString for Books, BIbles got changed to UTF8 only, they are also loaded that way so no need to detect UTF8. THis should be simpler in the long run.
+	----Added s to strong.dct now is strongs.dct in the Bible config
+	----When Detect ALL is pressed Implicit Detection is turned off.
+	----Adjusted Detect area size
+	---e
+	----Added turn map off for Bible build
+	--9
+	---Upgraded to Delphi 11.2
+	---b
+	----Reworked UnicodeToHtmlDataRawByteString function. Seems to hopefully work now. (Only affects Book Special Open...)
+	---c
+	----If you need to add to a page number on the <a id=.... side then use this format. <a id="page9++2"></a> this will cause the first number to increase by the second number. The result would be [p11>
+	----If you need to subtract from a page number on the <a id=.... side then use this format. <a id="page9--2"></a> this will cause the first number to decrease by the second number. The result would be [p7>
+	---d Regex editor, ttwregex.rules now support multiple files in [file=  use the divider | and then put the next filename so [file=filename|filename|filename]
+	---e Pre-export now works with tables like for <bcv> , probably other tags will do better as well with tables.
+	---f
+	----Added style="text-align:right/left/center/justify">
+	----Adjusted under class there is  rvps (hopefully does better with more paragraph settings) -- if there is problem in the future (Does not affect style="text-align)
+	---g
+	---- em now supported in style for special open the formula used is px = em * font-size(base = 16px); from here: https://www.calculatorway.com/pixel/em-to-px-converter.html
+	---- px and em now support these numbers #.# .# and #
+	---- limited style support for <div> such as <div style="margin-bottom:1.5em; margin-left:2em; margin-right:0em; margin-top:1.5em;"> px is also supported
+	---- Worked on <div style a bit more the SpaceBefore and SpaceAfter needed fixed.
+	---h	
+	---- Find/Detect now should work with text in a cell. Note if you select multiple cells it will warn you that it spans multiple lines and this won't work.
+	----<th in table can now have style setting
+	----<td should be able to as well.
+	---- also in p and th or td padding can be simplified if for all sides by doing padding:3px;
+	---- <li also can have style setting now.
+	--style attributes can now have like margin-top:3%;
+	---- Fixed it so Find/Detect works inside of tables correctly.
+	---i	
+	---- Find/Detect was only getting first occurance in a table now it should get them all.
+	---- If Not from Top is checked in Find/Detect and you are working on a table go in this order: 
+                  Left to right one row at a time.
+		[1][2][3]
+		[4][5][6]
+		[7][8][9]
+	---- Two forms of code for Detect F5 and Pairs to accomodate Tables (Basically the two forms are mixed together) Hopefully can be simplified someday
+	---- odd − minus sign added to Verse detection for inside TotheWord or in import.
+
+D1.7
+	--0
+	---Update to style="" for <p, <li, <td, <th
+	---margin-top|margin-bottom|margin-right|margin-left|font-family|font-size|color|background-color|font-style|font-weight|text-decoration|text-transform|vertical-align|direction|line-height|text-indent|text-align|padding|indent
+	---Special Open Help also updated
+	--1
+	--- VerseDetect should now work right with: "Some text and a number here 3 Wives for the Benjamites: Part 1 (21:6–14)"  it tries to look for numbers preceded by ver, vv. etc. (If you have troubles with this please let me know. verses|verse|vers|ver|vss|vrs|vv|vs|v||cf|ff|f|compare 	
+	---b
+	----<span has been added Note I don't recommend doing alignment styles here, font settings are recommended: font-family|font-size|color|background-color|font-style|font-weight|text-decoration|text-transform|vertical-align	
+	----more work on <span hopefully better
+	----more work on <span to deal with paragraph items
+	---c
+	---- Found bugs that were causing indentation to go awry. Note span at this point supports alignment but must be tested (It may be removed)
+	----When -# is used for firstline indent the overall indent is increase on that line by the negative. (Seems to work ok)
+	----<span only supports font settings
+	----font sizes: xx-small, x-small, small, medium, large, x-large, xx-large are supported they are 4,6,8,10,12,14,16
+	---d
+	---updates to the <ul tag type="..." now supports some additions, here are all of what is supported: disc, circle, square, none, lower-greek, number-leading-zero, a, A, i, I, 1
+	---error reporting for unsupported ul type or ul list-style-type
+	---fixes on <li so it doesn't have an extra return between lines
+	---e	
+	----<li and <ol, and <ul works better but can't handle <ol followed by <ul then </ul> then </ol>
+	--2
+	--- Made it so DetectReference uses TopEditor instead of regular. (I thought this wasn't needed but I was wrong.)
+	--- Too many changes in dealing with <li, <ol, <ul, and <p inside of these to list. (Not completely fixed but much better.) If you get a <p that doesn't work right inside of a <li... <p...</p></li> try putting the </li> before the <p> (I know not the best but I have spent countless hours on this already.
+	---b
+	---- Detect All fixed (restored it to just RichViweEdit not RichViewEdit.TopLevelEditor
+	---- Detect/Pairs stayed fine	
+	---- Detect Selected (F5) made it like Detect/Pairs so it can handle outside of a table, inside of table, including a table
+	---- These should all detect reference on footnotes as well.
+	---c
+	---- F7 = F6 then F5 (hint in Add Detect Pairs)
+	---- F8 = F3  shortcut key to help with Detect Pairs
+	---- Detect has Alt check (this allows previous verse detection links to be overwritten much like holding down Alt+F5) This can be useful during  a DetectAll
+	---- Detect Pairs can be Autosaved (setting saved to config.ini)
+	---d
+	---- <p inside of <li seems to be working better (Not 100% satisfied with <ul inside of <ol but it is what it is at this point. 
+	--3
+	---- Speed improvements to Array - Stage of Book Build (<slf> only works in Build - stage but it was searching for the <slf> tag so slowing things down)
+	---- Feedback during the <slf> stage in searching for topics and bookmarks that may be in the <slf>....||....</slf> tag The Information form should show if there is no match and try to explain where to look.
+	---- Scroll position feedback should be better for like <slf|bcv|ref|etc....
+	---b
+	---- Update <bcv> and || inside so that it better handles different sizes of text on either side of ||
+	---- Update interface in Detect Tab there is a check button that says OFF: CostasDetectRef ON: .....
+	---- Updates to Style especially in connection with <div and <p/h# 
+	---c
+	---- Font standard changed from 16 to 10 for Special Open
+	---d
+	---- Paragraphs in Special open like <p> now have 10points of FirstLine indent
+	---- Standard Formatting now has Paragraph > 10p FirstLine Indent (For All)
+	---e
+	---- <bkm> can now be inside of footnotes. Basically everything but <:>, <c>, <link>, <tlink> can be inside of footnotes (the last two could be should not that is <link> and <tlink>)
+	---- be careful where you place <bkm> in footnotes since it will chop off what shows in a footnote link hover.
+	---- the internal links for footnotes are 
+		---- bookmark: 'ttwFOOTnote' + IntToStr(note_cnt) 
+		---- and link is: tw://[self]?tid=' + IntToStr(topic_sub_i)+ '#ttwFOOTnote' + IntToStr(note_cnt)+'-' 
+	---- Hidden text can now be unhidden (Hidden text has a dashed line under it.)
+	---f
+	---- Fixed replace (get format from text, superscript and subscript were switched) on Find/Replace
+	---- Added Transparent to Highlight in Find/Replace for both
+	---g
+	---- Some fixes to Transparent the Add/Load from Find/Replace pairs needed fixed (was loading back in as white)
+	---- The check mark for transparency should hopefully update right now.
+	---h
+	---- Updates for <div style tag hopefully will maintain proper top and bottom style.
+	---- defaults for empty <p style that does not have top or bottom
+	--4
+	---a
+	---- Added <hide_topic> to Special Open so one can use <hide_topic_tw> to generate <hide_topic> in a regex rule or xhtml, html file etc.
+	---b
+	----//Do this instead of SelectAll for dealing with a selection immediately after Bullet Points like
+                 //bullet point:20:1-10 test
+                 //Otherwise it was only converting 20:1-1 it left off the 0
+                 //GCRVE.SelectAll;
+                 RVSetSelection(GCRVE,  0, Abs(LinearLen), 2);
+	---c
+	---- Standard Formating > Picture only Paragraph (function added so that only pictures are in a paragraph so resizing works right. Pictures in tables are ignored) (More settings in Build Config which do affect this.)		
+	---d
+	---- Now better catching of class tags in h1, h2, h3, h4 also recommended to convert these to <p...><:_tw> etc.
+	---- Find/Detect on Run All Pairs now shows # of # when finding.
+	--5
+	---- Added Picture on its own Paragraph into the Config of the Build (This all is for theWord which will automatically resize an image on its own paragraph if needed based on the Book view size.)
+	-----There are a few settings for it Check for Picture on Paragraph (check hint)
+	----- Next Width or Height if enabled the picture must be larger than this value in pixels for moving it to its own Paragraph to be enabled. 
+	---b
+	---- Fix on the Picture on Paragraph toggle (wasn't loading correctly)
+	---- SpecialOpen Import now lets you know if some Footnotes are left over. It tells you the tag and the footnote text in the XHTML-LeftOverTagsBadRefs.txt File
+	---c
+	---- Alert to Special Open XHTML-LeftOverTagsBadRefs alerts if a <div style not support, more info also for alignment, and other style items
+	---- Now Info area opens with XHTML-LeftOverTagsBadRefs after a Special Open is complete. Includes Edited Files and Matches Files if enabled
+	---d
+	---- Standard Formatting > General > Remove Protection of Styles (Make it so you can edit "locked" text.) -- sometimes when text is copied from theWord particularly books in non-edit mode the text can be locked. This helps unlock it.
+	---e
+	---- Fix <ref> and (Old method of <bcv> rarely used) to support Psalm #:#-#a (the a was giving problems) (Fixed in build and pre-export check)
+	---f
+	---- <ref> now works correctly with chapter like <ref>Ezekiel 22</ref> however it does not work with <ref>Ezekiel 21-22</ref>
+	--6
+	---a
+	---- Recommended if you need to encapsule <p or <div then use <footnote_tw id="unique_footnote-0">...<p...<div....</footnote_tw> so instead of using <p or <div as your footnote add <footnote_tw id before the <p or <div that is the main one. However as soon as <footnote_tw is used then <p and <div will not work for footnotes on this module. Sorry either it is footnote_tw or the other can't be both.
+	--- A good regex solution for this either for <p or <div is to do:
+		 <p whatever footnote is replace with </footnote_tw><footnote_tw id="unique_footnote-0"><p> 
+		Another regex '$'	'</footnote_tw>'	[roSingleLine]  --- this treats the whole file as a single line so then you can add the closing </footnote_tw>
+		Another regex to remove the starting </footnote_tw> that is not needed so '^(.*?)</footnote_tw>'	'$1'	[roSingleLine] --- this treats the whole file as a single line so you can remove that pesky starting </footnote_tw>
+	---b
+	---- <str> was not working right in Commentary so hopefully fixed it by turning off (modidx <> 2) in two places inside the <str> detection area. (Not sure if this affects anything else so far so good from the little testing I did.)
+	---- Added R check box that reverses a string in Find/Replace this is useful for Hebrew 
+	---- Special open now has <ltr> and <rtl> plus <span also supports dir:rtl or dir:ltr in style this is text level.. <p, <dir, <li, etc still support direction:ltr or direction:rtl this is paragraph level..
+	---- Added in Build Book > Devotional (It says recommended if devotional is checked in config. Note though any book can be used for a devotional such as Dictionary, Map, or General Book as far as I know.) 
+	---- Devotional section added in Config
+	---- SQL section added in Config (Use at one's own risk - it can be helpful though if you need to finalize some items in SQL.)
+	---- Fixed font embed
+	--7
+	---a Additions to <ref> and <bcv> in the Pre-export test engine and Build engine now also support: Chapter span without : <ref>Numbers 3-4</ref>; Single Chapter books: <ref>Jude 4-5</ref> <ref>Jude 4</ref> <ref>Jude 4b</ref> <ref>Jude 4b-6</ref> <ref>Jude 4b-6c</ref> (Important note <bcv> only works in this manner if under the Detect tab <bcv> OFF: is checked then the Auto VRefDetect code is not used instead the References are used from the References tab.
+	---b If in Detect Use org bcv and Costas' bcv is checked then both methods are used, otherwise just Costas' is used. It may take just a bit longer. Not org bcv is influenced by the references in the References tab 
+	---- Added support that strips out " *\([^)]*\) *" inside of <ref> or <bcv> on the left side
+	---c Fixed (the difference between ref||words was being ignored in bcv and needed fixed.)
+	
+D1.8
+	--0
+	---a Addition of Search/Replace in import regex rules this is a basic engine that doesn't use a regex engine just a quick search/replace engine. It has a few tags, roNoReplaceAll = find first instance, roIgnoreCase, roSingleLine. To activate this mode put {regex_off} inside the {} tags This engine can be used in _IN_ also if so desired. Also the #13 , #10, #9, #0 will be turned into return, newline, tab or null. This engine is very beneficial for replacing returns,newlines on a whole file which is a huge single line. Recommended for this in Bibles. (See the Regex Editor mode for more helps in the interface)
+	---b About files are now exported as RTF and now support images.
+	---c Adjusted this statement hmms but may be wrong needs more testing: if (fli_px < 0) AND ((ml_px = 0) OR (Gdiv_L_indent > 0))  then //use to be just fli_px < 0 now added AND ((ml_px = 0) OR (Gdiv_L_indent > 0)) (may need to change)
+	--- Fix FastMM dll
+	---d FastMM dll should not be needed in normal use only debugging.
+	--1
+	---a Added timers to Build on modules (dic, books, commentary, map, devotional) it shoud show up in the information list.
+	---b TopIdArr swapped with TopIdDictionary added this should speed up the <slf> links for topics.
+	---c BkmTopIdArr swapped with BkmTopDictionary added this should speed up the <slf> links for topics + bkm or bkm
+	---- <link> and <tlink> will now also keep the content of <str>(.*?)</str>, morph, slf, bcv, and not just the ones that have <slf>.*?\|\|(.*?)</slf> which will be kept but also the others.
+	---- Array stage should go faster since now <str>, <mrph>, <slf>, <bcv>, <ref> are ignored since we just need to get <c>, <:>, <link> or <tlink> and <bkm> to build the arrays.
+	---- attempt to bring TotheWord onto screen if offscreen.
+	---d Help F1 is for programming TRichView and is not needed for TotheWord users (It has been made invisible)
+	---- Help file for Regex Editor updated
+	---e The error reporting has been updated for Duplicate topics, bkm when they affect a <slf>
+	---- Information List now has File, Edit
+	---- Build information is automatically saved under the same file as the module in the same location with -b.txt attached.
+	---f Split topic+bkm and bkm only hashtables into two separate hashtables so as to speed up searches during build.
+	---g Improved the information list to include topics for each time amount. Also the Build, and Array overall are now timed.
+	---UTF8 encoding on Build info save
+	--2
+	---a Many updates to the configuration area of Book and Bible - mainly hints, also a few features that had been missed such as r2l, nfmid, version required (was updated) for Books; Bibles version required entry was updated, Font size was corrected to -10 to +10
+	---- Added "Keep Empty Lines" checkbox to the Bible build this assumes the user meant to have the empty lines.
+
+D1.9
+	--0
+	---a TRichView version 21 -- File > Open > Book Editor > Open New *.html; *.htm; *.xhtml (This will let you load this item just basic funcationality on this portion.
+	---- New Special Open, tags like <:_tw> etc work right still, Extra Edit now has a tool to help with Fontsize to px, em, per
+            ---- Use these in the css file to set a standard overall setting for font, etc.
+		html * {
+		  /* 13px = 10 size in TRichView*/
+		  font-size: 13px;
+		  /*  Segoe UI is our standard font */
+		  font-family: Segoe UI;    
+		}
+		 a {
+		  /*!important makes it so no other tags override it */ 
+		       text-decoration: none !important;
+		}
+		table, th, td {
+			  width: 100% !important;
+			  border: none !important;
+			  border-collapse: collapse !important;
+			  border: thin solid #C0C0C0 !important;
+		}
+            ---b New Special Open has been sped up LTR is done before hand, FormatTail now used
+ 	--- Special Open has been spead up FormatTail now used
+	--- Bible has more in Info Form.
+	--- Special Open has more in Info Form.
+	--- New Special Open Help file added Mainly Footnote Text
+	---c Book Non-free id hidden not needed in TotheWord
+	--1
+	---a Special Open and New Special Open updated <bk_tw> and <chp_tw>
+	---- Note <bk> does not work with Pre-export check only Actual Build
+	---- <bk> now works with Org <bcv> and Costas' bcv.
+	---b {math} and {roman_num} added 
+	----for math use math{1+20}, you can use the signs +,-,*,/ and the numbers can be - or + up to four decimal places
+	----for roman_num use roman_num{20} 
+	--2
+	---a <twhyp> and <twbkm> have been added also to Special Open and New Special Open as <twhyp_tw>, and <twbkm_tw>
+            ----Please see New Special Open OR Special Open > Special Tags for how both work!
+	---b Fix <twbkm> bug
+	---- Add buttons for <twhyp> and <twbkm> and shortcuts. Also see updated New Special Open Help
+	---c <twhyp> now accounts for unicode and even Manuscript M.
+	---d <a href now supports tw:// as a path and base path is not included on this. This affets New Special Open (maybe Special Open not tested)
+	--- CSS styles should now work better. No need to comment out styles that don't work.
+	---e inline style= in CSS on the New Special Open got broke with another fix, now working again.
+	---- Speed increase on RegexRules, and DetectVRef, no longer are their popup windows in these instead the information is displayed in Information Form.
+	---f Made it so a Regex rule could have ' inside of the Replace on a Regex rule.
+	----Speed increase on Mark Non-Links
+	---g Added Replace All from Caret
+	---h removed some settings from Book build that theWord does internally.
+	---i Updated to Delphi 11.3
+	--3
+	---a Verse Detection no longer automatically adds for Special Open or New Special Open if the reference is bad.
+	---- Extra Edit, has a paragraph alignment "fast" replace
+	---- Standard Formatting > General > Remove Protection Text/Paragraph (should now be good for paste from locked theWord books)
+	---- Added to Find/Dectect References ( a tool for removing links just check Rmv Link and it will be added to the pair)
+	---b Added UI - Update Implicit to Verse Detect if checked when a user double clicks a reference link it will update the implicit check box
+	---- Added Show to Verse Detect if checked the detection process will be shown.
+	---c Verse Detect was resizing text on fresh start up of TTW then Detecting
+	---- UI in Verse Detect must now also include Alt Key press (I tried Ctrl but it tries to popup an app to open the link) The implicit check is now also turned on.
+	---d Fixed Alt press on Double Click
+	---- Added warning message on Rmv Link
+	---- Chapter drop down was not getting updated on Double Click + Alt
+	---e Now Rmv Link removes links on F7 press, and its location has been moved.
+	---f trim() is used more often in <:>subjects, <link> etc, please test that it doesn't remove too much
+	---g Added Ordinal numbers to Verse Detection 
+	---h moved <hide_topic> and explained better. <hide_topic> tag should be inside of the topic but not on the <:> line or inside the </:>. The reason is if a user clicks off "Include Topic in Content" then it will be as if it never existed.
+	--4
+	----a Now in Book Editor for Open, Ignore Style, Use TTW Style or use Source Style applies to everything in the Open category of Book Editor.
+	----b Update to greek.lng for Esther and 2 Kings (I think), Work around in Book Editor > Open area which is #8. This helps fixed a Formatting issue that affects ReplaceAll
+	--5
+	----a Added build.greek.font, and build.hebrew.font to Book config (theWord will ignore it if it is not used.) THis is used in twAlpha
+	----b Fix Detect Verse Reference in Special Open/ New Special Open
+	--6
+	----a Examples > TCENT Bible information included. 
+	----- Fixed mapping a NT BIble. It had the wrong line count and needed them removed.
+	----b Added Open any TEXT file to Bible Editor and Book editor
+	----- Added Word Wrap to Bible and Book Editor. These settings are saved on close and reused on open.
+	----c Verse Detection fixes so First Timothy 3:15 and Song of Solomon 1:1 works well
+	----d Updated Verse detection fixes so that accounting for John 1:1; 1 Chr 1:2 was not affecting Acts 22:1, 2, 7, 9
+	----e Updated Find/Replace pairs so they have more settings for S, R, N and also the checkboxes in Swap Character(s).
+	----- Updated Bible Config Editor for Verse Rules, Tags
+	----f  Find/Replace addition of Replace - All Pairs which starts at Caret
+	----- Added CO to Find which comments out Regex automatically for you. It is saved with Find/Replace Pairs. (This is what it comments out at present which should be all: \^$.|?*+()[]{}-#!)
+	----g Updated f/r pairs to now include the caret setting in Replace box. This affects Replace All Button, Replace - All Pairs right click menu in Pairs, Replace All - All Pairs right click menu in Pairs
+	------ Added the ability to move pairs up and down in F/R and F/D
+	------ Added the ability to replace a pair in F/R
+	----h cleaned up <bk>, <chp>, and another I missed from <:>, <link>, <tlink>, <bkm>
+	----i Added the Alt setting to the Find/Detect Pairs which allows for overwriting previous verse detection links if desired.
+	---- Addition of Success/Failure results to Find/Detect Pairs
+	----j Fixed Any Implicit hopefully, added in Chapter detection in Verse Detection
+	----- fixed import verse detection, including chapter detection 
+	----k
+	----- Addition to Implicit which is Chapter 0 this is best if you are selecting the following chapters 1; 2; 3; 4 etc. but if you mean to do verses like 1, 2, 3, 4 it is best to have a chapter set. Otherwise it tries to get a chapter from the text.
+	----- Fix Hebrew issue with using Uniscribe engine
+	----- Fixed so Find/Replace pair, Find/Detect Pair "save trigger" should only come on when it is needed. (May need more testing. It was misfiring at the end after an open without any additions before.
+	----l Verse detection import works better with John 1, 1 Timothy 3 however, John 1, is IGNORED so this is noted in information. However, John 1; 1 Timothy 3 works right. This does not affect John 1,1 test
+	---- Verse detection in TTW works better with John 1, 1 Timothy 3 however, John 1, is MISLINKED so this is noted in information. Its link is John 1:1. However, John 1; 1 Timothy 3 works right. This does not affect John 1,1 test.
+	----m Fix to Internal VDetect from <> to => on a test.
+	----n Fix for Implicit detect on numbers 3, 2, 1 now should work like the line (implicit Gen 3): 3), test test 
+	----- Fix for Windows text engine fixed by Sergey now updated. Uniscribe text engine is recommended with Hebrew/English though. So that is the new norm.
+	----o Alt+Double Click on a Ref was making the chapter off by 1 since I added That in version k
+	----p fixed Chapter on Run Detect All Pairs it was -1 off since version k
+	---- Typo fix in Book Editor > Book Config "verision" to "version"
+	---- Also a link to "Latest Version" 
+	--7
+	----a Now "Special Open" and "New Special Open" Do not require Regex rules for loading. However, then Regex Rules are ignored.
+	----b-c Book Config now has the Devotional SQL included so the user can modify it. 
+	------ Book Config cleans out settings on the load of a new config file just incase it was an older file and didn't have all the settings.
+	------ {regex_off} no longer triggers Regex Match to error. However, {regex_off} count may not be accurate if "roNoReplaceAll" is used in [].
+	--8
+	----a Interface updates to the Bible Editor, with better hints and explanations.
+	----- Updates to topic tree at left of screen. Now saves its width. Also Load Topics button moved there for <:>, <c>, <link>, <tlink>, also doesn't clear but may recommend a reload of topics. Also Tree View has a few updates, doesn't clear unless item count changes.
+	----- Changelog adjusted so that new information is always at the bottom.
+	----b Extra edit has some more font replacement based off of Costas tw Util
+	--9
+	----a-b Book Editor > Clean Unused Fnts & Generates Fonts & Paragraph Style List now works better and if you click on a style it will try to take you to that in the main editor. It will also attempt to go down through the items with that style. It also warns you if there are some items that may not be standard.
+	------ Tools > Stripped Html to Clipboard has updated regex.
+D2.0
+	---0
+  	----a Background color can now be changed for Book, Bible, or Regex Editor
+	----Config should no longer warn but has defaults.
+	----b clicking on <str>.. or <morph... without previously selecting a word will now generate <str></str> and <morph></morph>
+	----c Colors in build and other places should have a lighter version of the main color chosen for the Editor
+	---- strong.h, strong.g for supporting new feature in twsneak-peek
+	---1
+	----a Working on 64bit version -- seems to have some errors in building books, etc. much to do here
+	---2
+	----a Refactoring for speed and code cleaning and worked more on interface Color
+	----b more refactoring and speed improvements for Final Build of Books.
+	----c small speed improvement, fixing <bkm>NASB</bkm> was not working right with <slf>&#NASB-||NASB</slf> after some speed improvements. It is now working right. Added NOT FOUND to the search for reminder in the build generated file
+	---3
+	----a Added checker for Bible Build, it happens as the Bible is built. Now Information is shown during Bible as well. It tries to tell you if there is a misbalance, nesting (for start tag), and Case problem on tags.
+	---- these are the tags it checks for so far:  ('<font', '</font>'), ('<rtf', '</rtf>'),('<a', '</a>'),  ('<sup>', '</sup>'), ('<sub>', '</sub>'), ('<rtl>', '</rtl>'), ('<ltr>', '</ltr>'),  ('<i>', '</i>'), ('<b>', '</b>'), ('<u>', '</u>'), ('<s>', '</s>'), ('<RF', '<Rf>'), ('<TS', '<Ts>'), ('<FI>', '<Fi>'), ('<FO>', '<Fo>'),('<FR>', '<Fr>'),  ('<NB>', '<Nb>'), ('<ST>', '<St>') Note these are all case sensitive (Also becareful of using NB or ST in the text unless intentional and then follow the case that is required. These may be best left to verse.rules)
+	---4
+	----a Fixed an extra linebreak that was being added to the first tag of a line such as <str>, <twhyp>, <link> etc. if the tag had a change of format (font) internally 
+	----- Added more error checking code so as to alert the user to some possible problems including no <:> in a General Book, Dictionary, etc and now it should close up cleanly
+	----- a bit of refactoring of code.
+	----b Additions to Book > Build area: You can now choose how many seconds are between each Info message (there was perhaps too many and causing a slow down.) You can also choose to have topics included in this or excluded. Same for commentary. If you want to see them all put in -1 seconds.
+	----- Status messages during the build were also reduced as well.
+	----c For info messages on build: The second timer works this way, it will show a status if that particular part of the build took longer than 5 seconds. Well many don't so you can go for awhile without a message. So now there is also an incremental counter based on that same second delay that will show the topic, etc that the build is progressing on. If you don't like this simply put in -1 secs and you will be good.
+	----d Fix <slf>, <bkm> array stage search indicator, it wasn't triggering which was causing some <slf> to fail. 
+	----- Add topic to error notes. 
+	----- Note about recommended Date for Bibles and Books added, too often what file one is on gets lost in the builds. It is recommended to always include this. (However, it is always internal in the file if it is not included in the file name.)
+	----5
+	----- Removed a regex count from error build, not needed
+	----- cleaned up some of the format checking code for Find/Replace
+	----- Added a basic replace to Replace in Find/Replace (uses StringReplace instead of Regex, however the only setting is Ignore case.)
+	----6
+	----- Bible Editor now, can display a line of the Bible text in the window below the BIble Editor, it can have original, Verse rules applied, Stripped Tags (Verse Rules are from the Bible Config area)
+	----7
+	----- No longer must have Regex rules file for Loading Bible with special open.
+	----- UTF8 requirement added to the text files
+	----- When Building Map turns off if #.#.#. is not on a line or has #.#.#. but is empty
+	----- Fixed Name/date error on saving Bible
+	----- If Trim problem in Map files appears it gives a bit more information but it shouldn't appear because we should have stopped it before it came up.
+	----- Case/MisBalance on Tag checker updated extensively
+	----8
+	----- Case/Misbalance on Tag checker updated more, now Case-Error really includes, misbalance and nesting. (Some speed ups hopefully)
+	----- BadUnicode Checking also included now.
+	----- Check for regex in Bible build
+	----- On Screen only check
+	----- Stop before Building if errors
+	----- Ignore tags for example <wt> is the only ignored one for now
+	----- much more.
+	----- templates added.
+	----9
+	----- On Bible check when you have a regex with a comment like (?#unusedStrong) that will be used in the Checker information rather than the whole regex in the Error comment.
+	----- multiple lines can now be loaded in the Verse Panel so you can test those multiple line problems or see more text quickly.
+D 2.1
+	----0
+	----- Added Go to NR (Next Regex) in Verse Panel this helps you jump through the text looking for issues, then click on the start of the next line and start again. (I could make it so it is just a Click again, however if word wrap is off then the highlight jumps you to the end of a long line and it messes up where you are at visually) You should be able to check multiple lines at a time as well.
+	----- There are two new templates in Templates for Highlight Regex and Bible Regex Check
+	----1
+	----- Standardized table, cells, etc in Formatting now checks for nil cells was causing an error, hopefully sped up as well. 
+	----2
+	----- Major overhaul of the Bible editor interface, since formatting is not really needed in the Bible editor mode we are now using TMemo instead of TRichViewEdit. Which if you load a text file it will be much much faster.
+	----- This also meant that the Bible Editor needs a different Search/Replace based on TMemo instead of TRichViewEdit (By the way there is a huge speed difference but remember TMemo does not have formatting like TRichViewEdit) so better not to compare between the two. It isn't even like comparing apples and oranges more like meat and bread.
+	----3
+	-----Check for empty tags and report/skip in Book Build alerts with a "NO CONTENT ERROR" 
+	-----Notify user if Module name has Unicode in the name of a Book hopefully one day it will work but for now SQL is not working right with it.
+	----4
+	----- Fixed a sql error on Embedding font, bit of clean up as well. (attempted to make TotheWord disonnect from a failed SQL database but couldn't solve as of now. User will need to manual delete as before.)
+	----- config.ini should auto make itself now on close if deleted. (Kinda like a reset)
+	----5 Adjust a Reformat back to Format in Delete blank lines (was causing error) - not a good speed improvement here
+	----- Move a Result (True/False) in Embedding fonts
+	----- Export view in Book Build is now in the Right panel instead of the bottom. Better for settings in left panel. Pre-export view is still there as well depending on if you have Show Export View clicked, or if you just clicked Check Pre-Export
+	----6
+	----- Normal Search now works in Find/Replace for Bible Editor (Down/Up) supported by PosCR and ReversePos
+	----- Now Normal or Regex search in Bible Editor is enabled depending on what was last left on on close down.
+	----- Colors should now save per each Editor. 
+	----- Ctrl+Down Arrow added for Next Result in Bible Editor
+	----- Ctrl+Click hint added to Bible Verse Panel was only on a check box before.
+	----7
+	----- Zoom added for Bible Editor, also Book Editor and Regex editor now support Ctrl+NumPad + for zoom, and NumPad - for opposite
+	----- Menus removed in Bible and Regex Editor, added Bible Options, Regex Options Menus
+	----- Background Color now includes Auto this was going to black it appeared to be set to clNone which would then show the clWindow or whatever the editor was at a bit hard to determine. It should now save and load with TtW
+	-----8
+	----- Font color was messing up in Bible Editor
+	----- addExtra Spacing turned off in StripTags
+	----- Verse Panel, now saves, size, font, color, style in Bible Editor
+	----- Additions to Verse Panel, Font, +, - for zoom
+	----- Resize Bar added for Verse Panel does not save yet, you wouldn't think a little resize bar would be so complex lol.
+	----- IMPORTANT NOTE: Please report bugs in the forum, it is too hard to track them in email. Your bug report may get lost. Also please assume there is a lot of code in TtW, (there is). So please be very clear and explain the procedure to reproduce a bug. It may be very clear in your mind since you just saw it but when it is "one line of text or a real short explanation of the bug" it gets very complex to know what is being discussed and this bug may get ignored. 
+	-----9
+	-----Switched from TMemo to TRichEdit to support longer lines in Bible Editor (not as fast though hmms)
+	-----New now works in BIble Editor. 
+D2.2
+	-----0-a
+	----- TTextEditor replaced RichEdit for the Bible Editor (note RichEdit was left elsewhere in place of TMemo)
+	----- Most things should work again in BIble Editor, I still have not solved Hebrew displaying correctly outside of line 1, not it does not actually mess up the content
+	----- Wordwrap if turned on - on restart causes an error, please ignore and continue. If you can't please set wordwrap to 0. I personally don't recommend wordwrap seems to slow things down. (I hope to fix the error on load or new)
+	----- Find/Replace should be working again for BIble Editor. 
+	----- Please let me know of anything that is broken still???? 
+	----- Testing need to see if a .ont file that is loaded and about removed will build. I just ran out of time for this build.
+	-----1-2
+	----- So much has changed in Bible Editor, Regex Editor, now lines are added, using TTextEditor component
+	----- Themes: See Bible Options or Regex Options (complex to modify try to study out what is there, sorry can't offer help on this, too complex)
+	----- Highlighter same as themes (complex to modify try to study out what is there, sorry can't offer help on this, too complex) I recommend using RegexRules-highlighter.JSON for RegexEditor and tWBible-highlighter for Bible Editor, similar for Themes
+	----- Book Editor now has Book Options this is for editor color, Background Color under Format now just changes the background.	
+	------Bible/Regex Editor has right click popup
+	-----3
+	-----Background Auto Color added to Options menu for each Editor
+	-----Line numbers 1,2,3,4,5 instead of 1,|,10
+	-----Ctrl + G added for Go To Line
+	-----Wordwrap set to False in Bible Build is nolonger used because the Lines don't wrap internally
+	-----Ruler hidden in Bible, Regex Editor view, not needed
+	-----New tWBible-Dark Theme added thanks Steve
+	-----Thanks Jon for all the testing you do it is immensly helpful.
+	-----Don't forget to check out Bible Editor Help and Regex Editor Help for shortcuts there are many!
+	-----Various other updates to account for changes 
+	-----4
+	-----Opening/saving of files updated
+	-----Bible Editor no longer has an intermediate converter, recommend use Book Editor for converting if needed for like rvf, rtf types.
+	-----Added a new Theme Blue Darker - works good with Html so it will use the background color.
+	-----TTextEditor was updated by Lasse
+	-----Chapel.json added to highlighters by Lasse
+	-----5
+	-----Regex editor updated to have the right Find/Replace
+	-----Bible/Regex editor find/replace now has pairs enabled, now template in file
+	-----Various fixes in loading/saving files for Editors
+	-----6
+	----- Line Break, Special Characters in Bible and Book editor
+	----- Regex Editor Update Rule, Comment, File now auto shows.
+	----- Fix for Highlighters, and Themes, not avaialble, the default is retried, if it doesn't exist then the user is alerted and the file is set to nothing.
+	-----7-8
+	-----Show VRs in Bible Verse Panel causes the Verse Rules applied to be visible in the Verse Panel. However, when you click on "Go to Nxt Regex M" it will only stop on verse rules if they are visible. Otherwise it will only stop on Strip Tags with problems.
+	-----The interface colors have been updated at Swap and Detect tab.  A few other places were set to Inactive for Config files that are uneditable.	
+	-----config internally now can be not-case sensitive for sections, id str etc.
+	-----Verse rules now only get regenerated when there is a modification to Verse rules in BIble Editor config
+	-----Bible/Regex editor Find/REplace now has pairs
+	-----ENDFILE, endfile, EndFile, eNdFiLe these will close a fold in RegexEditor case does not matter. If highlighter gets supported to close an empty line then we may switch to that. But we will try to keep this for backward compatibility	
+	----- Added Next, Prev, Expand, Collapse fold in right click
+	-----Updated save, various pairs, Bible editor, Regex editor (fixed a problem in regex editor)
+	-----Fix to Bible editor it wasn't loading the lines right, didn't have breaks as needed.
+	-----9
+	-----\t added to Regex Rules well Regex in general
+	-----Worked on speeding up Regex rules
+	-----Some interface fixes in Regex Editor, addition of Math and Roman Numeral to interface see hints.
+D2.3
+	-----0
+	-----Added an option to turn on/off the Final Regex Build which joins multiple Bible files on Special open as one. (If there is already one file no need to turn this on.) Also only turn on if you actually need it.
+	-----Numbers added to references_names.ref for those situation where you use the number as a name.
+	-----Normalize added to Regex rules as {normalize} also math, roman_num are now show in interface as well (Normalize is a good idea when working with languages that have accents, like Greek, Hebrew, Aramaic it puts the text in the standard. Not academic standard but the standard for everyone else which is more common.)
+	-----In replace of Regex \t has been added and now is substituted with #9 which is tab
+	-----1
+	----- I broke Regex \r, \n when I added \t now it is fixed
+	----- More time information is done with Special Open in Bible Editor. ALso new edit box for seconds between info messages. -1 for all. Note more messages = slower build time. (-1 would be good for figuring out what search/replace uses the most time.)
+	----- Edit box in book type for Seconds for book editor on New Special Open but not on Special Open is set to 5secs may be linked later..
+	-----2
+	----- Added some of the Bible Build settings to the config
+	----- Updates to Find/Replace in the Bible/Regex it was in a sense always on SingleLine mode which was slowing it way down and causing items not to work right.
+	----- Find/Replace and ReplaceAll now have better status updates in the status bar in BIble/Regex Find/Replace
+	-----3
+	----- Skip empty regex in Bible Build check with Regex.
+	----- SingleLine in Bible Find/Replace causes the check to be done on the whole Bible as a string, which is needed for \r\n (This needs some refinement like these are added per regex line but that is tricky for loading the text.) So for now SingleLine is the way to test the whole Bible.
+	----- Same for Go to Next Regex M (this will cause from the cursor to the end of the Bible to be loaded.) I thought about triggering this if a Regex had \r or \n, but then there are times when you want to check the whole line with ^ and $. Plus same as above with final Bible check, hard to trigger loading whole Bible from the regex test code due to how it was built around multiLine.
+	----- Empty regex in Go to Next Regex M are ignored.
+	----- Various fixes, etc.
+	-----4
+	------ Verse tag was checking for "<a" instead of "<a " also "<rtf" instead of "<rtf " these were updated so as to handle tags like <AT> 
+	-----5
+	------ Comments can now be put into the regex of the Bible Verse Panel, and in the Bible Build regex panel
+	-----6 
+	------ Bible Regex Check (.brxs) and Higlight Regex (.hrxs) have been merged into just .brxs (The two entry windows still exist one in the Bible Editor screen and the other in Bible Editor Build screen. They should both be synced up.
+	-----7
+	------- _xref tags for Bible Editor such as <bk_bname_xref:Gen> should now be {bk_bname_xref:Gen} this better supports the Bible checker. Also <chp_xref:whole> should now be {chp_xref:whole} < > is still possible for backward compatibility. But it is recommended to adjust these to { } 
+	-----8
+	------- bk_bname_xref needed correction on the regex
+	------- Better error checking added for when bk_bname and bk_bi are out of nomral 1-66 range. This generates an error file with the extention BKERRORS plus the map file if enabled is ignored to prevent out of range errors.
+	------- References names was not getting the last Reference like 66-REV now fixed
+	------9
+	------- {bk_xref:current} this is the present book
+	------- {chp_xref:current} this is the present chapter
+	------- {ver_xref:current} this is the present verse 
+	------- These were added to provide more support for <RX so like <RX {bk_xref:current}.1.3> note these tags can be used elsewhere in a Bible they just convert the current information to a book, chapter, or verse number.
+	------- They do require <bk_bi:... <bk_bname:... for the {bk_xref:current}; <chp_bi:...> for {chp:xref:current}; <ver:bi:...> for {ver_xref:current}
+D2.4
+	------ 0
+	------- Huge change, the interface can now be translated to other languages.
+	------- Simply copy English.lng (DO NOT REMOVE English.lng)
+	------- Read the instructions at the top of the File very very Important
+	------- Go through and translate
+	------- Tools > Language to change your language.
+	-------1
+	------- Moved to File > Language 
+	------- To refresh your translation move from your language to another and back and it will refresh.
+	--------2
+	------- lng\ directory changed to theWord-lng\ to prevent confusion with new .lng files for TotheWord. (The content of theWord-lng is for theWord languages files not TotheWord language files.)
+	-------3
+	------- Added NT Only to BIble Editor  in "Bible Mapping & General before Build" also toggles the NT Only in the Bible Verse Panel area and vice versa.
+	------- Interface adjustments to allow for other languages (more spacing)
+	-------3b A few changes, read caption instead of name for the languages
+	-------4
+	-------- Added rgb(#,#,#) to Verse Panel for Bible Editor (otherwise color is random) please make sure to put this inside the comment area.
+	-------- Updated to notify the user if there is no comment added. (?#comment) is recommended for each Bible Highlight markup
+	-------ver(2.4.5)
+	-------New version update mechanism
+	-------Update to lng files
+	
+	
+	
+	
+	
+	
+	
