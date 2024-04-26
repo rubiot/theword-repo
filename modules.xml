@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <modules source="Rubio's theWord Repo" baseurl="https://raw.githubusercontent.com/rubiot/theword-repo/main/">
 	<module identifier="jfa1681" type="Bibles" abbr="JFA1681" title="Bíblia de João Ferreira de Almeida, Edição de 1681" author="Almeida, João Ferreira de" lang="por" url="bibles/jfa1681.nt" descrurl="bibles/jfa1681.html" vermajor="0" verminor="1" verdate="2019-09-12" dlsizekb="706"/>
 	<module identifier="arc1819" type="Bibles" abbr="JFA1819" title="Bíblia de João Ferreira de Almeida, Edição de 1819" author="Almeida, João Ferreira de" lang="por" url="bibles/jfa1819.ont" descrurl="bibles/jfa1819.html" vermajor="1" verminor="0" verdate="2013-05-16" dlsizekb="2654"/>
